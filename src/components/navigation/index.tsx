@@ -120,8 +120,8 @@ const navigation = {
       },
     ],
     pages: [
-      { name: 'Company', href: '#' },
-      { name: 'Stores', href: '#' },
+      { name: 'Company', href: '/' },
+      { name: 'Shirt', href: '/shirt/' },
     ],
   }
 
@@ -133,10 +133,10 @@ const navigation = {
     const [open, setOpen] = useState(false)
   
     return (
-      <div className="bg-white">
+      <div className="bg-white z-50">
         {/* Mobile menu */}
         <Transition.Root show={open} as={Fragment}>
-          <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
+          <Dialog as="div" className="relative z-50 lg:hidden" onClose={setOpen}>
             <Transition.Child
               as={Fragment}
               enter="transition-opacity ease-linear duration-300"
@@ -149,7 +149,7 @@ const navigation = {
               <div className="fixed inset-0 bg-black bg-opacity-25" />
             </Transition.Child>
   
-            <div className="fixed inset-0 z-40 flex">
+            <div className="fixed inset-0 z-50 flex">
               <Transition.Child
                 as={Fragment}
                 enter="transition ease-in-out duration-300 transform"
@@ -265,7 +265,7 @@ const navigation = {
                         alt=""
                         className="block h-auto w-5 flex-shrink-0"
                       />
-                      <span className="ml-3 block text-base font-medium text-gray-900">CAD</span>
+                      <span className="ml-3 block text-base font-medium text-gray-900">EUR</span>
                       <span className="sr-only">, change currency</span>
                     </a>
                   </div>
@@ -423,7 +423,7 @@ const navigation = {
                         alt=""
                         className="block h-auto w-5 flex-shrink-0"
                       />
-                      <span className="ml-3 block text-sm font-medium">CAD</span>
+                      <span className="ml-3 block text-sm font-medium">EUR</span>
                       <span className="sr-only">, change currency</span>
                     </a>
                   </div>
