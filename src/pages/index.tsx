@@ -4,19 +4,18 @@ import ProductList from '@/components/productlist'
 import { useState } from 'react';
 import ShoppingCart from '@/components/shopping_cart';
 
-interface MyComponentProps {
+interface MyPageProps {
   setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Main() {
-
-  const [openCart, setOpenCart] = useState(false);
+export default function MyPage(props : MyPageProps) {
+  const [openCart, localSetOpenCart] = useState(false);
 
   return (
     <div>
       <div className='z-10 relative'>
-      <Navbar setOpenCart={setOpenCart} openCart={openCart} />
-      <ShoppingCart setOpenCart={setOpenCart} openCart={openCart} />
+      <Navbar setOpenCart={localSetOpenCart} />
+      <ShoppingCart setOpenCart={localSetOpenCart} openCart={openCart} />
       </div>
       <div className='relative'>
         <Collections/>

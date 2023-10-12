@@ -128,8 +128,13 @@ const navigation = {
   function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
   }
+
+  interface ShoppingCartProps {
+    setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
+    openCart: boolean;
+  }
   
-  export default function Navbar ({setOpenCart,openCart }) {
+  export default function Navbar ({setOpenCart}: ShoppingCartProps) {
     const [open, setOpen] = useState(false)
     console.log("is this the funciton?",typeof setOpenCart)
   
