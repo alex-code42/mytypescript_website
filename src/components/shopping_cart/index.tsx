@@ -27,7 +27,12 @@ const products = [
   // More products...
 ]
 
-export default function ShoppingCart({setOpenCart,openCart }) {
+interface ShoppingCartProps {
+  setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
+  openCart: boolean;
+}
+
+export default function ShoppingCart({setOpenCart,openCart }:ShoppingCartProps ) {
 
   return (
     <Transition.Root show={openCart} as={Fragment}>

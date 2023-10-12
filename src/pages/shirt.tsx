@@ -5,18 +5,18 @@ import { useState } from "react";
 
 
 
-interface MyComponentProps {
+interface MyPageProps {
     setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
   }
   
-  export default function MyPage() {
-    const [openCart, setOpenCart] = useState(false);
+  export default function MyTshirtPage(props: MyPageProps) {
+    const [openCart, localSetOpenCart] = useState(false);
   
     return (
       <div>
         <div className='z-10 relative'>
-            <Navbar setOpenCart={setOpenCart} openCart={openCart} />
-            <ShoppingCart setOpenCart={setOpenCart} openCart={openCart} />
+            <Navbar setOpenCart={localSetOpenCart} openCart={openCart} />
+            <ShoppingCart setOpenCart={localSetOpenCart} openCart={openCart} />
       </div>
         <ProductDetail />
       </div>
