@@ -14,8 +14,10 @@ interface MyComponentProps {
   
     return (
       <div>
-        <Navbar setOpenCart={setOpenCart} openCart={openCart} />
-        <ShoppingCart setOpenCart={setOpenCart} openCart={openCart} />
+        <div className='z-10 relative'>
+            <Navbar setOpenCart={setOpenCart} openCart={openCart} />
+            <ShoppingCart setOpenCart={setOpenCart} openCart={openCart} />
+      </div>
         <ProductDetail />
       </div>
     );
