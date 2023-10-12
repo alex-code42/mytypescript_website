@@ -129,8 +129,9 @@ const navigation = {
     return classes.filter(Boolean).join(' ')
   }
   
-  export default function Navbar() {
+  export default function Navbar ({setOpenCart,openCart }) {
     const [open, setOpen] = useState(false)
+    console.log("is this the funciton?",typeof setOpenCart)
   
     return (
       <div className="bg-white z-50">
@@ -413,6 +414,7 @@ const navigation = {
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                     <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                       Create account
+                      
                     </a>
                   </div>
   
@@ -438,7 +440,9 @@ const navigation = {
   
                   {/* Cart */}
                   <div className="ml-4 flow-root lg:ml-6">
-                    <a href="#" className="group -m-2 flex items-center p-2">
+                    <a href="#" className="group -m-2 flex items-center p-2"
+                    onClick={() => {setOpenCart(true); console.log("open-close")}}
+                    >
                       <ShoppingBagIcon
                         className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                         aria-hidden="true"
