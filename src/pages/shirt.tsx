@@ -14,6 +14,12 @@ interface MyPageProps {
   }
   
   export default function MyTshirtPage(props: MyPageProps) {
+    
+    function generateRandomId() {
+      // Generate a random number and append it to the current timestamp
+      return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    }
+
     const [openCart, localSetOpenCart] = useState(false);
 
     const [cart, setCart] = useState(() => {
@@ -27,8 +33,9 @@ interface MyPageProps {
     console.log("Shoppingcart",cart)
     // Define a function to add an item to the cart
     const addItemToCart = (item: Item) => {
-      const updatedCart = [...cart, item];
-      setCart(updatedCart);
+      const uniqueId = generateRandomId();
+      const updatedCart = [...cart, { ...item, id: uniqueId }];
+  setCart(updatedCart);
     };
 
     console.log("function-add-itemto-cart-in-shirts",addItemToCart)

@@ -5,7 +5,6 @@ import { RadioGroup } from '@headlessui/react'
 
 
 const product = {
-    id: 234,
     name: 'Basic Tee 6-Pack',
     price: '$192',
     href: '#',
