@@ -67,7 +67,7 @@ interface MyPageProps {
             <Navbar setOpenCart={localSetOpenCart} openCart={openCart} />
             <ShoppingCart setOpenCart={localSetOpenCart} openCart={openCart} cart={cart} removeItemFromCart={removeItemFromCart}/>
       </div>
-        <ProductDetail addItemToCart={addItemToCart}/>
+        <ProductDetail addItemToCart={addItemToCart} setOpenCart={localSetOpenCart}/>
       </div>
     );
   }

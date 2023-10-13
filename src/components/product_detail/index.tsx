@@ -62,7 +62,7 @@ const product = {
     return classes.filter(Boolean).join(' ')
   }
   
-  export default function ProductDetail({addItemToCart}: any) {
+  export default function ProductDetail({addItemToCart, setOpenCart}: any) {
     const [selectedColor, setSelectedColor] = useState(product.colors[0])
     const [selectedSize, setSelectedSize] = useState(product.sizes[2])
     console.log("function-inp_product-details",addItemToCart)
@@ -271,7 +271,18 @@ const product = {
   
                 <button
                   type="button"
-                  onClick={() => {addItemToCart(product); console.log("Open-and-closeee")}}
+                  onClick={() => {
+                    // Create a product object with selected color and size
+                    const productToAdd = {
+                      ...product,
+                      size: selectedSize,
+                      color: selectedColor,
+                    };
+                
+                    // Call the addItemToCart function to add the product to the cart
+                    addItemToCart(productToAdd);
+                    setOpenCart(true)
+                  }}
 
                   className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
