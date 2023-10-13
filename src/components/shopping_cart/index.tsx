@@ -2,38 +2,20 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
-const products = [
-  {
-    id: 1,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    color: 'Salmon',
-    price: '$90.00',
-    quantity: 1,
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt: 'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-  {
-    id: 2,
-    name: 'Medium Stuff Satchel',
-    href: '#',
-    color: 'Blue',
-    price: '$32.00',
-    quantity: 1,
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
-    imageAlt:
-      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
-  },
-  // More products...
-]
+
 
 interface ShoppingCartProps {
   setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
   openCart: boolean;
+  cart: any
+  removeItemFromCart: any
 }
 
-export default function ShoppingCart({setOpenCart,openCart }:ShoppingCartProps ) {
+export default function ShoppingCart({setOpenCart,openCart,cart, removeItemFromCart }:ShoppingCartProps ) {
+console.log("is it a funciton",removeItemFromCart);
+console.log("cart-number",cart[0]);
 
+const products = cart
   return (
     <Transition.Root show={openCart} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpenCart}>
@@ -82,11 +64,11 @@ export default function ShoppingCart({setOpenCart,openCart }:ShoppingCartProps )
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
-                            {products.map((product) => (
+                            {products.map((product: any) => (
                               <li key={product.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
-                                    src={product.imageSrc}
+                                    src={product.images[3].src}
                                     alt={product.imageAlt}
                                     className="h-full w-full object-cover object-center"
                                   />
@@ -103,11 +85,13 @@ export default function ShoppingCart({setOpenCart,openCart }:ShoppingCartProps )
                                     <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm">
-                                    <p className="text-gray-500">Qty {product.quantity}</p>
+                                    <p className="text-gray-500">Qty {product.name}</p>
 
                                     <div className="flex">
                                       <button
                                         type="button"
+                                        onClick={() => {removeItemFromCart(product.id); console.log("removing")}}
+
                                         className="font-medium text-indigo-600 hover:text-indigo-500"
                                       >
                                         Remove
