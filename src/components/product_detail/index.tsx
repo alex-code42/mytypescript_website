@@ -2,11 +2,7 @@ import { useState, useEffect  } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 
-interface Item {
-  id: number;
-  name: string;
-  price: number;
-}
+
 
 const product = {
     name: 'Basic Tee 6-Pack',
@@ -66,44 +62,11 @@ const product = {
     return classes.filter(Boolean).join(' ')
   }
   
-  export default function ProductDetail() {
+  export default function ProductDetail({addItemToCart}: any) {
     const [selectedColor, setSelectedColor] = useState(product.colors[0])
     const [selectedSize, setSelectedSize] = useState(product.sizes[2])
-    
-    const [cart, setCart] = useState(() => {
-      if (typeof window !== 'undefined') {
-        const savedCart = localStorage.getItem('shoppingCart');
-        return savedCart ? JSON.parse(savedCart) : [];
-      }
-      return [];
-    });
-
-    console.log("eine neue Carte wird initalisiert")
-
-    // Define a function to add an item to the cart
-    const addItemToCart = (item: Item) => {
-      const updatedCart = [...cart, item];
-      setCart(updatedCart);
-    };
-  
-    // Define a function to remove an item from the cart
-    const removeItemFromCart = (itemId: number) => {
-      const updatedCart = cart.filter((item: any) => item.id !== itemId);
-      setCart(updatedCart);
-    };
-  
-    // Load the cart data from localStorage when the component mounts
-    useEffect(() => {
-      const savedCart = localStorage.getItem('shoppingCart');
-      if (savedCart) {
-        setCart(JSON.parse(savedCart));
-      }
-    }, []);
-  
-    // Save the cart data to localStorage whenever it changes
-    useEffect(() => {
-      localStorage.setItem('shoppingCart', JSON.stringify(cart));
-    }, [cart]);
+    console.log("function-inp_product-details",addItemToCart)
+ 
 
 
   
@@ -308,7 +271,7 @@ const product = {
   
                 <button
                   type="button"
-                  onClick={() => {addItemToCart(product); console.log("Open-and-close")}}
+                  onClick={() => {addItemToCart(product); console.log("Open-and-closeee")}}
 
                   className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
