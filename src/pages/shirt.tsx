@@ -24,7 +24,7 @@ interface MyPageProps {
       return [];
     });
 
-
+    console.log("Shoppingcart",cart)
     // Define a function to add an item to the cart
     const addItemToCart = (item: Item) => {
       const updatedCart = [...cart, item];
@@ -38,6 +38,8 @@ interface MyPageProps {
       const updatedCart = cart.filter((item: any) => item.id !== itemId);
       setCart(updatedCart);
     };
+    console.log(removeItemFromCart);
+    
   
     // Load the cart data from localStorage when the component mounts
     useEffect(() => {
@@ -56,7 +58,7 @@ interface MyPageProps {
       <div>
         <div className='z-10 relative'>
             <Navbar setOpenCart={localSetOpenCart} openCart={openCart} />
-            <ShoppingCart setOpenCart={localSetOpenCart} openCart={openCart} />
+            <ShoppingCart setOpenCart={localSetOpenCart} openCart={openCart} cart={cart} removeItemFromCart={removeItemFromCart}/>
       </div>
         <ProductDetail addItemToCart={addItemToCart}/>
       </div>
