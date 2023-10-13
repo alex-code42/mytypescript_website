@@ -13,9 +13,7 @@ interface ShoppingCartProps {
 
 export default function ShoppingCart({setOpenCart,openCart,cart, removeItemFromCart }:ShoppingCartProps ) {
 console.log("is it a funciton",removeItemFromCart);
-console.log("cart-number",cart[0]);
 
-const products = cart
   return (
     <Transition.Root show={openCart} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpenCart}>
@@ -64,7 +62,7 @@ const products = cart
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
-                            {products.map((product: any) => (
+                            {cart?.map((product: any) => (
                               <li key={product.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
@@ -82,10 +80,10 @@ const products = cart
                                       </h3>
                                       <p className="ml-4">{product.price}</p>
                                     </div>
-                                    <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                                    {/* <p className="mt-1 text-sm text-gray-500">{product.color}</p> */}
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm">
-                                    <p className="text-gray-500">Qty {product.name}</p>
+                                    <p className="text-gray-500">Size: {product.size.name} - Color: {product.color.name}</p>
 
                                     <div className="flex">
                                       <button
