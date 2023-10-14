@@ -66,7 +66,7 @@ console.log("is it a funciton",removeItemFromCart);
                               <li key={product.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
-                                    src={product.images[3].src}
+                                    src={product.images[0].src}
                                     alt={product.imageAlt}
                                     className="h-full w-full object-cover object-center"
                                   />

@@ -1,11 +1,13 @@
 import { useState, useEffect  } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
+import { log } from 'console'
 
 
 
 const product = {
     name: 'Basic Tee 6-Pack',
+    id: 679,
     price: '$192',
     href: '#',
     breadcrumbs: [
@@ -62,13 +64,14 @@ const product = {
     return classes.filter(Boolean).join(' ')
   }
   
-  export default function ProductDetail({addItemToCart, setOpenCart}: any) {
+
+  
+  export default function ProductDetail({addItemToCart, setOpenCart, id}: any) {
     const [selectedColor, setSelectedColor] = useState(product.colors[0])
     const [selectedSize, setSelectedSize] = useState(product.sizes[2])
     console.log("function-inp_product-details",addItemToCart)
- 
-
-
+    console.log("THis is the id -->>>",id);
+    
   
     return (
       <div className="bg-white">
