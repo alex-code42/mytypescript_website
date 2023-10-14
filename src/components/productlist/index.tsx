@@ -1,49 +1,25 @@
 import Link from "next/link"
+import { products } from "./productlist"
+import Image from 'next/image'
 
-const products = [
-    {
-      id: 678,
-      name: 'Basic Tee',
-      href: '#',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: '$35',
-      color: 'Black',
-    },
-    {
-      id: 679,
-      name: 'Basic Tee 6-Pack',
-      href: '#',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: '$192',
-      color: 'Black',
-    },
-    {
-      id: 680,
-      name: 'Machined Mechanical Pencil',
-      href: '#',
-      price: '$35',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
-      imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-    },
-    // More products...
-  ]
+
+console.log(products);
+
+
   
   export default function ProductList({setOpenCart}) {
     return (
       <div>
         <div className="bg-white">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900">Products to Buy</h2>
-  
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900">Collection</h2>
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {products.map((product) => (
               <div key={product.id} className="group relative">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                   <img
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
+                    src={product.images[0].src}
+                    alt={product.images[0].alt}
                     className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                   />
                 </div>
