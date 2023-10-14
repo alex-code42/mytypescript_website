@@ -71,7 +71,7 @@ interface MyPageProps {
       </div>
       <ProductList/>
       <Collections/>
-        <ProductDetail addItemToCart={addItemToCart} setOpenCart={localSetOpenCart}/>
+        {/* <ProductDetail addItemToCart={addItemToCart} setOpenCart={localSetOpenCart}/> */}
       </div>
     );
   }
