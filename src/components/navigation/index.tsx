@@ -120,8 +120,7 @@ const navigation = {
       },
     ],
     pages: [
-      { name: 'Company', href: '/' },
-      { name: 'Shirt', href: '/shirt/' },
+      { name: 'Shop', href: '/shop/' },
     ],
   }
 
@@ -301,7 +300,7 @@ const navigation = {
   
                 {/* Logo */}
                 <div className="ml-4 flex lg:ml-0">
-                  <a href="#">
+                  <a href="/">
                     <span className="sr-only">Your Company</span>
                     <img
                       className="h-8 w-auto"

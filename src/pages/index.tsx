@@ -18,7 +18,6 @@ export default function MyPage(props : MyPageProps) {
       <ShoppingCart setOpenCart={localSetOpenCart} openCart={openCart} />
       </div>
       <div className='relative'>
-        <Collections/>
         <ProductList/>
         </div>
     </div>
