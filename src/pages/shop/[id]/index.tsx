@@ -5,7 +5,7 @@ import { useRouter } from 'next/router.js';
 
 
 
-export default function ProductDetailPage({addItemToCart, localSetOpenCart}){
+export default function ProductDetailPage({addItemToCart}:any){
 
     const router = useRouter();
   const { isReady } = router;
@@ -15,7 +15,7 @@ export default function ProductDetailPage({addItemToCart, localSetOpenCart}){
     return(
         <div>
              <div className='z-10 relative'>
-             <ProductDetail addItemToCart={addItemToCart} setOpenCart={localSetOpenCart} id={id}/>
+             <ProductDetail addItemToCart={addItemToCart} id={id}/>
 
             </div>
         

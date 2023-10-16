@@ -7,7 +7,7 @@ console.log(products);
 
 
   
-  export default function ProductList({setOpenCart}) {
+  export default function ProductList() {
     return (
       <div>
         <div className="bg-white">
@@ -31,7 +31,7 @@ console.log(products);
                         {product.name}
                       </a>
                     </h3>
-                    <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                    {/* <p className="mt-1 text-sm text-gray-500">{product.color}</p> */}
                   </div>
                   <p className="text-sm font-medium text-gray-900">{product.price}</p>
                 </div>

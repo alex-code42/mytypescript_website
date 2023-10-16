@@ -1,22 +1,19 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import useOpenShoppingCard from '../zustand';
 
 
 
-interface ShoppingCartProps {
-  setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
-  openCart: boolean;
-  cart: any
-  removeItemFromCart: any
-}
 
-export default function ShoppingCart({setOpenCart,openCart,cart, removeItemFromCart }:ShoppingCartProps ) {
-console.log("is it a funciton",removeItemFromCart);
+
+export default function ShoppingCart({cart,removeItemFromCart}: any) {
+  const { isTrue, toggleState } = useOpenShoppingCard(); // Use the state and toggle function
+
 
   return (
-    <Transition.Root show={openCart} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOpenCart}>
+    <Transition.Root show={isTrue} as={Fragment}>
+      <Dialog as="div" className="relative z-10" onClose={toggleState}>
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-500"
@@ -50,7 +47,7 @@ console.log("is it a funciton",removeItemFromCart);
                           <button
                             type="button"
                             className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
-                            onClick={() => setOpenCart(false)}
+                            onClick={toggleState}
                           >
                             <span className="absolute -inset-0.5" />
                             <span className="sr-only">Close panel</span>
@@ -124,7 +121,7 @@ console.log("is it a funciton",removeItemFromCart);
                           <button
                             type="button"
                             className="font-medium text-indigo-600 hover:text-indigo-500"
-                            onClick={() => {setOpenCart(false); console.log("Open-and-close")}}
+                            onClick={toggleState}
                           >
                             Continue Shopping
                             <span aria-hidden="true"> &rarr;</span>

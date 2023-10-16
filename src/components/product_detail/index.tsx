@@ -4,6 +4,7 @@ import { RadioGroup } from '@headlessui/react'
 import { log } from 'console'
 import { products } from '../productlist/productlist'
 import { useRouter } from 'next/router'
+import useOpenShoppingCard from '../zustand'
 
 
 
@@ -18,6 +19,8 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
 
   
   export default function ProductDetail({addItemToCart, setOpenCart}: any) {
+    const { isTrue, toggleState } = useOpenShoppingCard(); // Use the state and toggle function
+
     
     // console.log("function-inp_product-details",addItemToCart)
     // console.log("THis is the id -->>>",id);
@@ -250,7 +253,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                 
                     // Call the addItemToCart function to add the product to the cart
                     addItemToCart(productToAdd);
-                    setOpenCart(true)
+                    {toggleState}
                   }}
 
                   className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
