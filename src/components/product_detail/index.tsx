@@ -1,14 +1,9 @@
 import { useState, useEffect  } from 'react'
-import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
-import { log } from 'console'
 import { products } from '../productlist/productlist'
 import { useRouter } from 'next/router'
 import useOpenShoppingCard from '../zustand'
 import useCartStore from '../zustand/cartStore'
-
-
-
 
 
   
@@ -20,13 +15,10 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
   
 
   
-  export default function ProductDetail({addItemToCart, setOpenCart}: any) {
+  export default function ProductDetail() {
     const { isTrue, toggleState } = useOpenShoppingCard(); // Use the state and toggle function
     const addToCart = useCartStore((state) => state.addToCart);
 
-    
-    // console.log("function-inp_product-details",addItemToCart)
-    // console.log("THis is the id -->>>",id);
 
     const [selectedColor, setSelectedColor] = useState("")
     const [selectedSize, setSelectedSize] = useState("")
@@ -36,7 +28,6 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
   const { isReady, query } = router;
 
         if (!isReady) {
-          // If router is not ready yet, you can return a loading state or handle it as needed.
           return <div>Loading...</div>;
         }
     const { id } = query;
@@ -126,7 +117,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
               <p className="text-3xl tracking-tight text-gray-900">€ {product?.price}</p>
   
               {/* Reviews */}
-              <div className="mt-6">
+              {/* <div className="mt-6">
                 <h3 className="sr-only">Reviews</h3>
                 <div className="flex items-center">
                   <div className="flex items-center">
@@ -146,7 +137,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                     {reviews.totalCount} reviews
                   </a>
                 </div>
-              </div>
+              </div> */}
   
               <form className="mt-10">
                 {/* Colors */}

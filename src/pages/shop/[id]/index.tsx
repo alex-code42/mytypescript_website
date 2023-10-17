@@ -5,18 +5,17 @@ import { useRouter } from 'next/router.js';
 
 
 
-export default function ProductDetailPage({addItemToCart}:any){
+export default function ProductDetailPage(){
 
     const router = useRouter();
   const { isReady } = router;
-  const { id } = router.query;
-  console.log("this is the id",id);
+  const { id }= router.query;
+
   
     return(
         <div>
              <div className='z-10 relative'>
-             <ProductDetail addItemToCart={addItemToCart} id={id}/>
-
+             <ProductDetail id={id as string} />
             </div>
         
         
