@@ -3,6 +3,13 @@ import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import ShoppingCart from '../shopping_cart'
 import { useEffect } from 'react'
+import useOpenShoppingCard from '../zustand'
+
+interface Item {
+  id: number;
+  name: string;
+  price: number;
+}
 
 const navigation = {
     categories: [
@@ -130,14 +137,14 @@ const navigation = {
     return classes.filter(Boolean).join(' ')
   }
 
-  interface ShoppingCartProps {
-    setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
-    openCart: boolean;
-  }
+
   
-  export default function Navbar ({setOpenCart}: ShoppingCartProps) {
+  export default function Navbar () {
     const [open, setOpen] = useState(false)
-    console.log("is this the funciton?",typeof setOpenCart)
+    const { isTrue, toggleState } = useOpenShoppingCard(); // Use the state and toggle function
+// console.log("is it true?????",isTrue);
+
+    // console.log("is this the funciton?",typeof setOpenCart)
   
     return (
       <div className="bg-white z-50">
@@ -447,7 +454,7 @@ const navigation = {
                   {/* Cart */}
                   <div className="ml-4 flow-root lg:ml-6">
                     <a href="#" className="group -m-2 flex items-center p-2"
-                    onClick={() => {setOpenCart(true); console.log("open-close")}}
+                   onClick={toggleState}
                     >
                       <ShoppingBagIcon
                         className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
@@ -473,7 +480,7 @@ const navigation = {
       return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     }
 
-    const [openCart, localSetOpenCart] = useState(false);
+    // const [openCart, localSetOpenCart] = useState(false);
 
     const [cart, setCart] = useState(() => {
       if (typeof window !== 'undefined') {
@@ -516,8 +523,8 @@ const navigation = {
   
     return(
       <div className='z-10 relative'>
-      <Navbar setOpenCart={localSetOpenCart} openCart={openCart} />
-      <ShoppingCart setOpenCart={localSetOpenCart} openCart={openCart} cart={cart} removeItemFromCart={removeItemFromCart}/>
+      <Navbar />
+      <ShoppingCart cart={cart} removeItemFromCart={removeItemFromCart}/>
         </div>
     )
   }

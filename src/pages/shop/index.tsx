@@ -4,6 +4,8 @@ import ShoppingCart from "@/components/shopping_cart";
 import { useState, useEffect  } from 'react'
 import Collections from "@/components/collections";
 import ProductList from "@/components/productlist";
+import useOpenShoppingCard from "@/components/zustand";
+
 
 interface Item {
   id: number;
@@ -11,16 +13,21 @@ interface Item {
   price: number;
 }
 
-interface MyPageProps {
-    setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
-  }
+
   
-  export default function MyTshirtPage(props: MyPageProps) {
+  export default function MyTshirtPage() {
+    const { isTrue, toggleState } = useOpenShoppingCard();
+
     
     
     return (
       <div>
       <ProductList/>
+      <div>
+        <button onClick={toggleState}>Toggle Shopping Cart</button>
+        {isTrue ? <p>Shopping Cart is open.</p> : <p>Shopping Cart is closed.</p>}
+      </div>
+
       <Collections/>
         {/* <ProductDetail addItemToCart={addItemToCart} setOpenCart={localSetOpenCart}/> */}
       </div>
