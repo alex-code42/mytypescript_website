@@ -5,6 +5,8 @@ type Product = {
   id: string;
   name: string;
   price: number;
+  selectedColor: string; 
+  selectedSize: string; 
 };
 
 type CartStore = {

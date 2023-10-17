@@ -28,6 +28,9 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
     // console.log("function-inp_product-details",addItemToCart)
     // console.log("THis is the id -->>>",id);
 
+    const [selectedColor, setSelectedColor] = useState("")
+    const [selectedSize, setSelectedSize] = useState("")
+
 
   const router = useRouter();
   const { isReady, query } = router;
@@ -43,8 +46,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
     
     const product = filteredProduct[0]
 
-    // const [selectedColor, setSelectedColor] = useState(product?.colors[0])
-    // const [selectedSize, setSelectedSize] = useState(product?.sizes[2])
+
   
     return (
       <div className="bg-white">
@@ -151,7 +153,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                 <div>
                   <h3 className="text-sm font-medium text-gray-900">Color</h3>
   
-                  {/* <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
+                  <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
                     <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
                     <div className="flex items-center space-x-3">
                       {product?.colors.map((color) => (
@@ -180,7 +182,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                         </RadioGroup.Option>
                       ))}
                     </div>
-                  </RadioGroup> */}
+                  </RadioGroup>
                 </div>
   
                 {/* Sizes */}
@@ -192,7 +194,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                     </a>
                   </div>
   
-                  {/* <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
+                  <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
                     <RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
                     <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
                       {product?.sizes.map((size) => (
@@ -242,7 +244,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                         </RadioGroup.Option>
                       ))}
                     </div>
-                  </RadioGroup> */}
+                  </RadioGroup>
                 </div>
   
                   <button
@@ -251,14 +253,12 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                         // Create a product object with selected color and size
                         const productToAdd = {
                           ...product,
-                          // size: selectedSize,
-                          // color: selectedColor,
+                          size: selectedSize,
+                          color: selectedColor,
                         };
-                        // Call the addItemToCart function to add the product to the cart
-                        // addItemToCart(productToAdd);
-                        addToCart(product)
-                        console.log("adding things")
-                        toggleState(); // Call the toggleState function
+
+                        addToCart(productToAdd)
+                        toggleState(); 
                       }}
                       className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
