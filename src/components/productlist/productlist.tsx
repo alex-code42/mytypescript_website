@@ -53,8 +53,8 @@ export const products = [
   },
     {
       name: 'Basic Tee 6-Pack',
-      id: 234,
-      price: 192,
+      id: "623",
+      price: 199,
       href: '#',
       breadcrumbs: [
         { id: 679, name: 'Men', href: '#' },
