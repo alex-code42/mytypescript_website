@@ -5,6 +5,8 @@ import { log } from 'console'
 import { products } from '../productlist/productlist'
 import { useRouter } from 'next/router'
 import useOpenShoppingCard from '../zustand'
+import useCartStore from '../zustand/cartStore'
+
 
 
 
@@ -20,6 +22,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
   
   export default function ProductDetail({addItemToCart, setOpenCart}: any) {
     const { isTrue, toggleState } = useOpenShoppingCard(); // Use the state and toggle function
+    const addToCart = useCartStore((state) => state.addToCart);
 
     
     // console.log("function-inp_product-details",addItemToCart)
@@ -253,6 +256,8 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                         };
                         // Call the addItemToCart function to add the product to the cart
                         // addItemToCart(productToAdd);
+                        addToCart(product)
+                        console.log("adding things")
                         toggleState(); // Call the toggleState function
                       }}
                       className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"

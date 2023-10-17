@@ -2,7 +2,7 @@ export const products = [
   {
     name: "Luxury Bag",
     id: "680",
-    price: '$535',
+    price: 234,
     href: '#',
     breadcrumbs: [
       { id: 1, name: 'Woman', href: '#' },
@@ -53,7 +53,7 @@ export const products = [
   },
     {
       name: 'Basic Tee 6-Pack',
-      id: "679",
+      id: 234,
       price: '$192',
       href: '#',
       breadcrumbs: [
@@ -107,7 +107,7 @@ export const products = [
     {
       name: 'Nike Sport Shoe',
       id: "673",
-      price: '$196',
+      price: 345,
       href: '#',
       breadcrumbs: [
         { id: 673, name: 'Men', href: '#' },
