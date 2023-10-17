@@ -4,12 +4,11 @@ import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@her
 import ShoppingCart from '../shopping_cart'
 import { useEffect } from 'react'
 import useOpenShoppingCard from '../zustand'
+import { Item } from '../../../types'
+import useCartStore from '../zustand/cartStore';
 
-interface Item {
-  id: number;
-  name: string;
-  price: number;
-}
+
+
 
 const navigation = {
     categories: [
@@ -141,10 +140,22 @@ const navigation = {
   
   export default function Navbar () {
     const [open, setOpen] = useState(false)
-    const { isTrue, toggleState } = useOpenShoppingCard(); // Use the state and toggle function
-// console.log("is it true?????",isTrue);
+    const { isTrue, toggleState } = useOpenShoppingCard();
+    const cartItems = useCartStore((state) => state.items);
 
-    // console.log("is this the funciton?",typeof setOpenCart)
+    let cartColor;
+
+    if (cartItems.length == 0){
+      cartColor = "text-gray-400"
+    }
+    else{
+      cartColor = "text-indigo-700"
+
+    }
+    
+    
+
+
   
     return (
       <div className="bg-white z-50">
@@ -457,10 +468,11 @@ const navigation = {
                    onClick={toggleState}
                     >
                       <ShoppingBagIcon
-                        className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                        className={`${cartColor} h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-700`}
+                        
                         aria-hidden="true"
                       />
-                      <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                      <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartItems.length}</span>
                       <span className="sr-only">items in cart, view bag</span>
                     </a>
                   </div>
@@ -475,56 +487,12 @@ const navigation = {
 
   export function Navigation (){
 
-    function generateRandomId() {
-      // Generate a random number and append it to the current timestamp
-      return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-    }
-
-    // const [openCart, localSetOpenCart] = useState(false);
-
-    const [cart, setCart] = useState(() => {
-      if (typeof window !== 'undefined') {
-        const savedCart = localStorage.getItem('shoppingCart');
-        return savedCart ? JSON.parse(savedCart) : [];
-      }
-      return [];
-    });
-
-    console.log("Shoppingcart",cart)
-    // Define a function to add an item to the cart
-    const addItemToCart = (item: Item) => {
-      const uniqueId = generateRandomId();
-      const updatedCart = [...cart, { ...item, id: uniqueId }];
-  setCart(updatedCart);
-    };
-
-    console.log("function-add-itemto-cart-in-shirts",addItemToCart)
-  
-    // Define a function to remove an item from the cart
-    const removeItemFromCart = (itemId: number) => {
-      const updatedCart = cart.filter((item: any) => item.id !== itemId);
-      setCart(updatedCart);
-    };
-    console.log(removeItemFromCart);
-    
-  
-    // Load the cart data from localStorage when the component mounts
-    useEffect(() => {
-      const savedCart = localStorage.getItem('shoppingCart');
-      if (savedCart) {
-        setCart(JSON.parse(savedCart));
-      }
-    }, []);
-  
-    // Save the cart data to localStorage whenever it changes
-    useEffect(() => {
-      localStorage.setItem('shoppingCart', JSON.stringify(cart));
-    }, [cart]);
+ 
   
     return(
       <div className='z-10 relative'>
       <Navbar />
-      <ShoppingCart cart={cart} removeItemFromCart={removeItemFromCart}/>
+      <ShoppingCart />
         </div>
     )
   }

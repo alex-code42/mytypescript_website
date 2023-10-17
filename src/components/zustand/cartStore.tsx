@@ -1,17 +1,18 @@
 import { create } from 'zustand';
 import { v4 as uuidv4 } from 'uuid';
+import { Item } from '../../../types';
 
-type Product = {
-  id: string;
-  name: string;
-  price: number;
-  selectedColor: string; 
-  selectedSize: string; 
-};
+
+// type Product = {
+//   id: string;
+//   name: string;
+//   price: number;
+//   images: Image[]
+// };
 
 type CartStore = {
-  items: Product[];
-  addToCart: (product: Product) => void;
+  items: Item[];
+  addToCart: (product: Item) => void;
   removeFromCart: (productId: string) => void;
   clearCart: () => void;
 };
@@ -34,6 +35,7 @@ const useCartStore = create<CartStore>((set) => ({
       }
       return { items: updatedCart };
     }),
+    
   clearCart: () =>
     set(() => {
       if (typeof window !== 'undefined') {
@@ -41,6 +43,11 @@ const useCartStore = create<CartStore>((set) => ({
       }
       return { items: [] };
     }),
+    
 }));
 
+
+  
+
 export default useCartStore;
+
