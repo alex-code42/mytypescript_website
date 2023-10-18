@@ -4,6 +4,8 @@ import useCartStore from '../zustand/cartStore';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { Item } from '../../../types';
 import { useState, useEffect } from 'react'
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+
 
 
 
@@ -125,7 +127,7 @@ export default function CheckoutForm() {
           type="submit"
           className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
-          Save
+          Jetzt Bestellen
         </button>
       </div>
       </div>
@@ -197,7 +199,26 @@ export function ProductsInCheckout(){
                         <p>€ {isClient && totalPrice}</p>
                       </div>
                       </div>
+                     
+
+                      
                     </div>
         
     )
+}
+
+const initialOptions = {
+    clientId: "test",
+    currency: "EUR",
+    intent: "capture",
+};
+
+export function Paypall() {
+    return (
+        <div className="mx-auto max-w-2xl items-center px-8 mb-8">
+        <PayPalScriptProvider options={initialOptions}>
+            <PayPalButtons />
+        </PayPalScriptProvider>
+        </div>
+    );
 }
