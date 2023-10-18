@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import useOpenShoppingCard from '../zustand'
 import { Item } from '../../../types'
 import useCartStore from '../zustand/cartStore';
-
+import { useCartItemCount } from '../zustand/cartStore'
 
 
 
@@ -142,16 +142,14 @@ const navigation = {
     const [open, setOpen] = useState(false)
     const { isTrue, toggleState } = useOpenShoppingCard();
     const cartItems = useCartStore((state) => state.items);
+    
+    const cartItemCount = useCartItemCount();
+    console.log("this is the count",cartItemCount);
+    
 
-    let cartColor;
 
-    if (cartItems.length == 0){
-      cartColor = "text-gray-400"
-    }
-    else{
-      cartColor = "text-indigo-700"
+    // const cartColor = cartItems.length === 0 ? 'text-gray-400' : 'text-gray-800';
 
-    }
     
     
 
@@ -468,11 +466,11 @@ const navigation = {
                    onClick={toggleState}
                     >
                       <ShoppingBagIcon
-                        className={`${cartColor} h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-700`}
+                        className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-700"
                         
                         aria-hidden="true"
                       />
-                      <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartItems.length}</span>
+                      <span suppressHydrationWarning className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartItemCount}</span>
                       <span className="sr-only">items in cart, view bag</span>
                     </a>
                   </div>

@@ -3,6 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { Item } from '../../../types';
 
 
+
+
 // type Product = {
 //   id: string;
 //   name: string;
@@ -45,6 +47,8 @@ const useCartStore = create<CartStore>((set) => ({
     }),
     
 }));
+export const useCartItemCount = () =>
+  useCartStore((state) => state.items.length);
 
 
   
