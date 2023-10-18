@@ -139,6 +139,16 @@ const navigation = {
 
   
   export default function Navbar () {
+
+    const [isClient, setIsClient] = useState(false)
+ 
+    useEffect(() => {
+      setIsClient(true)
+    }, [])
+   
+
+
+
     const [open, setOpen] = useState(false)
     const { isTrue, toggleState } = useOpenShoppingCard();
     const cartItems = useCartStore((state) => state.items);
@@ -148,14 +158,16 @@ const navigation = {
     
 
 
-    // const cartColor = cartItems.length === 0 ? 'text-gray-400' : 'text-gray-800';
+    const cartColor = cartItemCount === 0 && isClient ? 'text-gray-500' : 'text-gray-900';
+    console.log(cartColor);
+    
 
     
     
 
 
   
-    return (
+return(<>
       <div className="bg-white z-50">
         {/* Mobile menu */}
         <Transition.Root show={open} as={Fragment}>
@@ -466,11 +478,11 @@ const navigation = {
                    onClick={toggleState}
                     >
                       <ShoppingBagIcon
-                        className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-700"
-                        
+                        className={`${cartColor} h-6 w-6 flex-shrink-0 group-hover:text-gray-500`}
+                        // suppressHydrationWarning 
                         aria-hidden="true"
                       />
-                      <span suppressHydrationWarning className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartItemCount}</span>
+                      <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{isClient && cartItemCount}</span>
                       <span className="sr-only">items in cart, view bag</span>
                     </a>
                   </div>
@@ -480,8 +492,10 @@ const navigation = {
           </nav>
         </header>
       </div>
+      </>
     )
   }
+  
 
   export function Navigation (){
 
