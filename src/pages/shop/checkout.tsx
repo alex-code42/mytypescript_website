@@ -1,4 +1,4 @@
-import CheckoutForm from "@/components/checkoutForm";
+import CheckoutForm, { Paypall } from "@/components/checkoutForm";
 import { ProductsInCheckout } from "@/components/checkoutForm";
 
 
@@ -8,6 +8,7 @@ export default function CheckoutPage(){
         <div>
             <ProductsInCheckout/>
             <CheckoutForm/>
+            <Paypall/>
         </div>
     )
 }
