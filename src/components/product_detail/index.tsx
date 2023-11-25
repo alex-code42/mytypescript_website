@@ -15,7 +15,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
   
 
   
-  export default function ProductDetail() {
+  export default function ProductDetail({productss}) {
     const { isTrue, toggleState } = useOpenShoppingCard(); // Use the state and toggle function
     const addToCart = useCartStore((state) => state.addToCart);
 
@@ -23,6 +23,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
     const [selectedColor, setSelectedColor] = useState("")
     const [selectedSize, setSelectedSize] = useState("")
 
+console.log("this is the productssssss",productss);
 
   const router = useRouter();
   const { isReady, query } = router;
@@ -65,7 +66,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
               ))}
               <li className="text-sm">
                 <a href={product?.href} aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
-                  {product?.name}
+                  {productss.fields.productName}
                 </a>
               </li>
             </ol>
@@ -75,7 +76,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
           <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
             <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
               <img
-                src={product?.images[0].src}
+                src={productss.fields.images[0].fields.file.url}
                 alt={product?.images[0].alt}
                 className="h-full w-full object-cover object-center"
               />
@@ -83,14 +84,14 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
             <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
               <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
                 <img
-                  src={product?.images[1].src}
+                  src={productss.fields.images[1].fields.file.url}
                   alt={product?.images[1].alt}
                   className="h-full w-full object-cover object-center"
                 />
               </div>
               <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
                 <img
-                  src={product?.images[2].src}
+                  src={productss.fields.images[2].fields.file.url}
                   alt={product?.images[2].alt}
                   className="h-full w-full object-cover object-center"
                 />
@@ -98,7 +99,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
             </div>
             <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
               <img
-                src={product?.images[3].src}
+                src={productss.fields.images[3].fields.file.url}
                 alt={product?.images[3].alt}
                 className="h-full w-full object-cover object-center"
               />
@@ -108,13 +109,13 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
           {/* Product info */}
           <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
             <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{product?.name}</h1>
+              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{productss.fields.productName}</h1>
             </div>
   
             {/* Options */}
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="sr-only">Product information</h2>
-              <p className="text-3xl tracking-tight text-gray-900">€ {product?.price}</p>
+              <p className="text-3xl tracking-tight text-gray-900">€ {productss.fields.price}</p>
   
               {/* Reviews */}
               {/* <div className="mt-6">
@@ -147,7 +148,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                   <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
                     <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
                     <div className="flex items-center space-x-3">
-                      {product?.colors.map((color) => (
+                      {productss?.fields?.colors.map((color) => (
                         <RadioGroup.Option
                           key={color.name}
                           value={color}
@@ -188,7 +189,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                   <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
                     <RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
                     <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                      {product?.sizes.map((size) => (
+                      {productss?.fields?.sizes.map((size) => (
                         <RadioGroup.Option
                           key={size.name}
                           value={size}
@@ -264,7 +265,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                 <h3 className="sr-only">Description</h3>
   
                 <div className="space-y-6">
-                  <p className="text-base text-gray-900">{product?.description}</p>
+                  <p className="text-base text-gray-900">{productss.fields.shortDescription}</p>
                 </div>
               </div>
   
@@ -273,7 +274,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
   
                 <div className="mt-4">
                   <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                    {product?.highlights.map((highlight) => (
+                    {productss?.fields?.hightlights?.map((highlight) => (
                       <li key={highlight} className="text-gray-400">
                         <span className="text-gray-600">{highlight}</span>
                       </li>
@@ -286,7 +287,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                 <h2 className="text-sm font-medium text-gray-900">Details</h2>
   
                 <div className="mt-4 space-y-6">
-                  <p className="text-sm text-gray-600">{product?.details}</p>
+                  <p className="text-sm text-gray-600">{productss?.fields.details}</p>
                 </div>
               </div>
             </div>
