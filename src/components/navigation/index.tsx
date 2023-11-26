@@ -17,15 +17,15 @@ const navigation = {
         name: 'Blog',
         featured: [
           {
-            name: '3 Days Jordan',
-            href: '/shop/jordan-travel-3-days',
-            imageSrc: 'https://images.ctfassets.net/lr057rk03c3t/3Rvi2LF2sRuh5sshcLcW3N/efdf6d8598ee1c3fd89f11f71f21dd76/juli-kosolapova-Us_dv71f1bc-unsplash.jpg',
+            name: 'Crafting Style in the Heart of Cuba',
+            href: '/blog/havana-threads-crafting-style-in-the-heart-of-cuba',
+            imageSrc: 'https://images.ctfassets.net/lr057rk03c3t/2lAVVSa2qumuaGou7wW4Hr/23d4f3f0eb65c4110395c421ea00f647/ban-yido--rP8CP8usWc-unsplash__1_.jpg',
             imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
           },
           {
-            name: 'Nike Shoes',
-            href: '/shop/nike-sport-shoe',
-            imageSrc: 'https://images.ctfassets.net/lr057rk03c3t/4uA1hfL3rlIv2F1dfHZ4Jm/565115a07b4d7bedbe14da4b311bc278/shoe2.jpg',
+            name: 'In Praise of Denim',
+            href: '/blog/in-praise-of-the-denim',
+            imageSrc: 'https://images.ctfassets.net/lr057rk03c3t/6xPIqfELbEfKSTUnLIkXxY/c544a3f0edf0cf9a924fa88fbdc98b53/philip-martin-CPXPFi3POLw-unsplash.jpg',
             imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
           },
         ],
@@ -319,7 +319,7 @@ return(<>
                                               {item.name}
                                             </a>
                                             <p aria-hidden="true" className="mt-1">
-                                              Shop now
+                                              Read more
                                             </p>
                                           </div>
                                         ))}
