@@ -1,6 +1,7 @@
 import ProductList from '@/components/productlist'
 import Collections from '@/components/collections'
 import  { createClient } from 'contentful'
+import Header from '@/components/header';
 
 
 export async function getStaticProps() {
@@ -27,8 +28,10 @@ export async function getStaticProps() {
     
     return (
       <div>
-      <Collections blog={blog}/>
+        <Header/>
       <ProductList productss={productss}/>
+      <Collections blog={blog}/>
+      
       
       </div>
     );
