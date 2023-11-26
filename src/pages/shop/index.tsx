@@ -5,8 +5,6 @@ import  { createClient } from 'contentful'
 
 
 export async function getStaticProps() {
-  //connect to contentful
-  // console.log("this is the contentful space id in detail xxx",process.env.CONTENTFUL_SPACE_ID);
 
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID || '',
@@ -14,7 +12,6 @@ export async function getStaticProps() {
   })
 
   const res = await client.getEntries({ content_type: 'product' })
-  // console.log("this is the contentful response",res.items);
   
   return {
 
