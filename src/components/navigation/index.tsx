@@ -13,119 +13,47 @@ import { useCartItemCount } from '../zustand/cartStore'
 const navigation = {
     categories: [
       {
-        id: 'women',
-        name: 'Women',
+        id: 'blog',
+        name: 'Blog',
         featured: [
           {
-            name: 'New Arrivals',
-            href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
+            name: '3 Days Jordan',
+            href: '/shop/jordan-travel-3-days',
+            imageSrc: 'https://images.ctfassets.net/lr057rk03c3t/3Rvi2LF2sRuh5sshcLcW3N/efdf6d8598ee1c3fd89f11f71f21dd76/juli-kosolapova-Us_dv71f1bc-unsplash.jpg',
             imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
           },
           {
-            name: 'Basic Tees',
-            href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
+            name: 'Nike Shoes',
+            href: '/shop/nike-sport-shoe',
+            imageSrc: 'https://images.ctfassets.net/lr057rk03c3t/4uA1hfL3rlIv2F1dfHZ4Jm/565115a07b4d7bedbe14da4b311bc278/shoe2.jpg',
             imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
           },
         ],
         sections: [
           {
-            id: 'clothing',
-            name: 'Clothing',
+            id: 'travel',
+            name: 'Travel',
             items: [
-              { name: 'Tops', href: '#' },
-              { name: 'Dresses', href: '#' },
-              { name: 'Pants', href: '#' },
-              { name: 'Denim', href: '#' },
-              { name: 'Sweaters', href: '#' },
-              { name: 'T-Shirts', href: '#' },
-              { name: 'Jackets', href: '#' },
-              { name: 'Activewear', href: '#' },
-              { name: 'Browse All', href: '#' },
+              { name: 'Jordan', href: '#' },
+              { name: 'Marocco', href: '#' },
+              { name: 'Paris', href: '#' },
+              
+             
             ],
           },
           {
-            id: 'accessories',
-            name: 'Accessories',
+            id: 'fashion',
+            name: 'Fashion',
             items: [
-              { name: 'Watches', href: '#' },
+              { name: 'Shoes', href: '#' },
               { name: 'Wallets', href: '#' },
               { name: 'Bags', href: '#' },
-              { name: 'Sunglasses', href: '#' },
-              { name: 'Hats', href: '#' },
-              { name: 'Belts', href: '#' },
+              
             ],
-          },
-          {
-            id: 'brands',
-            name: 'Brands',
-            items: [
-              { name: 'Full Nelson', href: '#' },
-              { name: 'My Way', href: '#' },
-              { name: 'Re-Arranged', href: '#' },
-              { name: 'Counterfeit', href: '#' },
-              { name: 'Significant Other', href: '#' },
-            ],
-          },
+          }
+          
         ],
-      },
-      {
-        id: 'men',
-        name: 'Men',
-        featured: [
-          {
-            name: 'New Arrivals',
-            href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
-            imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
-          },
-          {
-            name: 'Artwork Tees',
-            href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg',
-            imageAlt:
-              'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
-          },
-        ],
-        sections: [
-          {
-            id: 'clothing',
-            name: 'Clothing',
-            items: [
-              { name: 'Tops', href: '#' },
-              { name: 'Pants', href: '#' },
-              { name: 'Sweaters', href: '#' },
-              { name: 'T-Shirts', href: '#' },
-              { name: 'Jackets', href: '#' },
-              { name: 'Activewear', href: '#' },
-              { name: 'Browse All', href: '#' },
-            ],
-          },
-          {
-            id: 'accessories',
-            name: 'Accessories',
-            items: [
-              { name: 'Watches', href: '#' },
-              { name: 'Wallets', href: '#' },
-              { name: 'Bags', href: '#' },
-              { name: 'Sunglasses', href: '#' },
-              { name: 'Hats', href: '#' },
-              { name: 'Belts', href: '#' },
-            ],
-          },
-          {
-            id: 'brands',
-            name: 'Brands',
-            items: [
-              { name: 'Re-Arranged', href: '#' },
-              { name: 'Counterfeit', href: '#' },
-              { name: 'Full Nelson', href: '#' },
-              { name: 'My Way', href: '#' },
-            ],
-          },
-        ],
-      },
+      }
     ],
     pages: [
       { name: 'Shop', href: '/shop/' },
@@ -279,7 +207,7 @@ return(<>
                       </div>
                     ))}
                   </div>
-  
+{/*   
                   <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                     <div className="flow-root">
                       <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
@@ -291,7 +219,7 @@ return(<>
                         Create account
                       </a>
                     </div>
-                  </div>
+                  </div> */}
   
                   <div className="border-t border-gray-200 px-4 py-6">
                     <a href="#" className="-m-2 flex items-center p-2">
@@ -441,30 +369,7 @@ return(<>
                 </Popover.Group>
   
                 <div className="ml-auto flex items-center">
-                  <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                    <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                      Sign in
-                    </a>
-                    <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                    <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                      Create account
-                      
-                    </a>
-                  </div>
-  
-                  <div className="hidden lg:ml-8 lg:flex">
-                    <a href="#" className="flex items-center text-gray-700 hover:text-gray-800">
-                      <img
-                        src="https://tailwindui.com/img/flags/flag-canada.svg"
-                        alt=""
-                        className="block h-auto w-5 flex-shrink-0"
-                      />
-                      <span className="ml-3 block text-sm font-medium">EUR</span>
-                      <span className="sr-only">, change currency</span>
-                    </a>
-                  </div>
-  
-                  {/* Search */}
+
                   <div className="flex lg:ml-6">
                     <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
                       <span className="sr-only">Search</span>
