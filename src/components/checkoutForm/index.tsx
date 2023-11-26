@@ -156,7 +156,7 @@ export function ProductsInCheckout(){
                               <li key={product.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
-                                    src={product?.images[0]?.src}
+                                    src={product?.image}
                                     alt={product.imageAlt}
                                     className="h-full w-full object-cover object-center"
                                   />
@@ -166,7 +166,7 @@ export function ProductsInCheckout(){
                                   <div>
                                     <div className="flex justify-between text-base font-medium text-gray-900">
                                       <h3>
-                                        <a href={product.href}>{product.name}</a>
+                                        <a href={product.href}>{product.productName}</a>
                                       </h3>
                                       <p className="ml-4">€ {product.price}</p>
                                     </div>
