@@ -5,31 +5,31 @@ import  { createClient } from 'contentful'
 
 
 export async function getStaticProps() {
-
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID || '',
     accessToken: process.env.CONTENTFUL_ACCESS_KEY || ''
-  })
+  });
 
-  const res = await client.getEntries({ content_type: 'product' })
-  
+  const productRes = await client.getEntries({ content_type: 'product' });
+  const blogRes = await client.getEntries({ content_type: 'blog' });
+
   return {
-
     props: {
-      productss: res.items
+      productss: productRes.items,
+      blog: blogRes.items
     }
-  }
+  };
 }
 
 
   
-  export default function MyTshirtPage({productss } : {productss: any}) {
-    // console.log("this is the productss-xxx",productss);
+  export default function MyTshirtPage({productss,blog } : {productss: any, blog: any}) {
+    console.log("this is the blogs-zzz",blog);
     
     return (
       <div>
       <ProductList productss={productss}/>
-      <Collections />
+      <Collections blog={blog}/>
       </div>
     );
   }
