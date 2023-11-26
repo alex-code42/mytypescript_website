@@ -41,6 +41,7 @@ console.log("this is the productssssss",productss);
     
     
     const product = filteredProduct[0]
+    console.log("this is the product",product);
 
 
   
@@ -246,7 +247,8 @@ console.log("this is the productssssss",productss);
                       onClick={() => {
                         // Create a product object with selected color and size
                         const productToAdd = {
-                          ...product,
+                          ...productss.fields,
+                          image: productss.fields.images[0].fields.file.url,
                           size: selectedSize,
                           color: selectedColor,
                         };

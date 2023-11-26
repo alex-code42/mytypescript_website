@@ -1,8 +1,8 @@
 export interface Item {
     id: string;
-    name: string;
+    productName: string;
     price: number;
-    images: { src: string; alt: string }[];
+    image: string;
     color: { name: string };
     size: { name: string };
     imageAlt: string;
