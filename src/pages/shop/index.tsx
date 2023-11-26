@@ -26,14 +26,13 @@ export async function getStaticProps() {
 
 
   
-  export default function MyTshirtPage({productss}) {
+  export default function MyTshirtPage({productss } : {productss: any}) {
     // console.log("this is the productss-xxx",productss);
     
     return (
       <div>
       <ProductList productss={productss}/>
       <Collections />
-
       </div>
     );
   }

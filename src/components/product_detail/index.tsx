@@ -14,8 +14,12 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
   }
   
 
+
+interface ProductDetailProps {
+    productss: any}
+
   
-  export default function ProductDetail({productss}) {
+  export default function ProductDetail({ productss }: ProductDetailProps) {
     const { isTrue, toggleState } = useOpenShoppingCard(); // Use the state and toggle function
     const addToCart = useCartStore((state) => state.addToCart);
 
@@ -64,11 +68,9 @@ console.log("this is the productssssss",productss);
                   </div>
                 </li>
               ))}
-              <li className="text-sm">
-                <a href={product?.href} aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
-                  {productss.fields.productName}
-                </a>
-              </li>
+              <li className="text-gray-400">
+            <span className="text-gray-600">{productss.fields.productName}</span>
+          </li>
             </ol>
           </nav>
   
@@ -148,7 +150,7 @@ console.log("this is the productssssss",productss);
                   <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
                     <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
                     <div className="flex items-center space-x-3">
-                      {productss?.fields?.colors.map((color) => (
+                      {productss?.fields?.colors.map((color: any) => (
                         <RadioGroup.Option
                           key={color.name}
                           value={color}
@@ -189,7 +191,7 @@ console.log("this is the productssssss",productss);
                   <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
                     <RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
                     <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                      {productss?.fields?.sizes.map((size) => (
+                      {productss?.fields?.sizes.map((size: any) => (
                         <RadioGroup.Option
                           key={size.name}
                           value={size}
@@ -249,7 +251,7 @@ console.log("this is the productssssss",productss);
                           color: selectedColor,
                         };
 
-                        addToCart(productToAdd)
+                        addToCart(productToAdd as any)
                         toggleState(); 
                       }}
                       className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -274,7 +276,7 @@ console.log("this is the productssssss",productss);
   
                 <div className="mt-4">
                   <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                    {productss?.fields?.hightlights?.map((highlight) => (
+                    {productss?.fields?.hightlights?.map((highlight : any) => (
                       <li key={highlight} className="text-gray-400">
                         <span className="text-gray-600">{highlight}</span>
                       </li>

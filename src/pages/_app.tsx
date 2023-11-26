@@ -2,12 +2,13 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Layout from '@/components/layout'
 
-export default function App({ Component, pageProps }: AppProps) {
+
+
+export default function App({ Component , pageProps }: AppProps) {
   return (
-  <div>
-  <Layout injectFirst>
-    <Component {...pageProps}/> 
-  </Layout>
-  </div>)
-  
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
+      

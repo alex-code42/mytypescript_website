@@ -8,7 +8,7 @@ export default function MyPage() {
 
   return (
     <div>
-        <ProductList/>
+        {/* <ProductList/> */}
         <Collections/>
     </div>
      
