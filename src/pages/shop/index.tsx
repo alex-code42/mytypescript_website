@@ -9,8 +9,8 @@ export async function getStaticProps() {
   // console.log("this is the contentful space id in detail xxx",process.env.CONTENTFUL_SPACE_ID);
 
   const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY
+    space: process.env.CONTENTFUL_SPACE_ID || '',
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY || ''
   })
 
   const res = await client.getEntries({ content_type: 'product' })
