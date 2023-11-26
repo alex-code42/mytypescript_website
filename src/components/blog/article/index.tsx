@@ -45,11 +45,11 @@ const TravelBlogPost = ({blog}:any) => {
           className="w-full object-cover rounded"
         />
     
-        <img
+        {/* <img
           src={blog.fields.moreImages[3].fields.file.url}
           alt="Reisebild 4"
           className="w-full object-cover rounded"
-        />
+        /> */}
             <p className="mt-4">
         Egal, ob du ein erfahrener Reisender oder ein Neuling bist, hier gibt
         es für jeden etwas zu entdecken.
