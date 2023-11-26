@@ -6,8 +6,8 @@ import { useRouter } from 'next/router.js';
 import { createClient } from 'contentful'
 
 const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  space: process.env.CONTENTFUL_SPACE_ID || '',
+  accessToken: process.env.CONTENTFUL_ACCESS_KEY || '',
 })
 
 export const getStaticPaths = async () => {
@@ -27,7 +27,7 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }:any) => {
     const { items } = await client.getEntries({
       content_type: 'product',
       'fields.slug': params.slug
@@ -40,7 +40,7 @@ export const getStaticProps = async ({ params }) => {
   }
 
 
-export default function ProductDetailPage({product}){
+export default function ProductDetailPage({product}: any){
 
     const router = useRouter();
   const { isReady } = router;
@@ -51,7 +51,7 @@ export default function ProductDetailPage({product}){
     return(
         <div>
              <div className='z-10 relative'>
-             <ProductDetail id={id as string} productss={product}/>
+             <ProductDetail productss={product}/>
             </div>
         
         
