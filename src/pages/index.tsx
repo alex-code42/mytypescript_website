@@ -28,7 +28,7 @@ export async function getStaticProps() {
     
     return (
       <div>
-        <Header/>
+        <Header blog={blog}/>
       <ProductList productss={productss}/>
       <Collections blog={blog}/>
       

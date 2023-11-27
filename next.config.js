@@ -10,6 +10,9 @@ module.exports = {
       {
         hostname: 'images.ctfassets.net',
       },
+      {
+        hostname: 'res.cloudinary.com',
+      },
     ],
   },
 }

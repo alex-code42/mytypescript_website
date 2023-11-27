@@ -1,7 +1,12 @@
+import { log } from 'console';
 import React from 'react';
 
 const TravelBlogPost = ({blog}:any) => {
   console.log("this is the blogg",blog);
+
+  
+  
+  
   return (
     <div>
         <div className="h-[50vh] bg-gray-50 flex items-center">
