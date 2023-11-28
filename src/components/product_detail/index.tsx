@@ -4,6 +4,7 @@ import { products } from '../productlist/productlist'
 import { useRouter } from 'next/router'
 import useOpenShoppingCard from '../zustand'
 import useCartStore from '../zustand/cartStore'
+import { ProductDetails } from '../../../types'
 
 
   
@@ -15,11 +16,10 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
   
 
 
-interface ProductDetailProps {
-    productss: any}
+
 
   
-  export default function ProductDetail({ productss }: ProductDetailProps) {
+  export default function ProductDetail({productss} : {productss: ProductDetails}) {
     const { isTrue, toggleState } = useOpenShoppingCard(); // Use the state and toggle function
     const addToCart = useCartStore((state) => state.addToCart);
 

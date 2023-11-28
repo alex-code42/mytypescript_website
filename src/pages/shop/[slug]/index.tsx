@@ -4,6 +4,7 @@ import ProductDetail from "@/components/product_detail"
 import { useRouter } from 'next/router.js';
 
 import { createClient } from 'contentful'
+import { ProductDetails } from "../../../../types";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID || '',
@@ -40,7 +41,7 @@ export const getStaticProps = async ({ params }:any) => {
   }
 
 
-export default function ProductDetailPage({product}: any){
+export default function ProductDetailPage({product} : {product: ProductDetails}){
 
     const router = useRouter();
   const { isReady } = router;
