@@ -4,7 +4,7 @@ import { products } from '../productlist/productlist'
 import { useRouter } from 'next/router'
 import useOpenShoppingCard from '../zustand'
 import useCartStore from '../zustand/cartStore'
-import { ProductDetails } from '../../../types'
+import { AddedItem, Item, ProductDetails } from '../../../types'
 
 
   
@@ -246,14 +246,26 @@ console.log("this is the productssssss",productss);
                       type="button"
                       onClick={() => {
                         // Create a product object with selected color and size
-                        const productToAdd = {
-                          ...productss.fields,
+                        const productToAdd : AddedItem = {
+                          id: productss.sys.id,
                           image: productss.fields.images[0].fields.file.url,
                           size: selectedSize,
                           color: selectedColor,
+                          title: productss.fields.title,
+                          subtitle: productss.fields.subtitle,
+                          slug: productss.fields.slug,
+                          titleImage: productss.fields.titleImage,
+                          description: productss.fields.description,
+                          conclusion: productss.fields.conclusion,
+                          comments: productss.fields.comments,
+                          productName: productss.fields.productName,
+                          images: productss.fields.images,
+                          price: productss.fields.price,
+                          imageAlt: "",
+                          href: "",
                         };
 
-                        addToCart(productToAdd)
+                        addToCart(productToAdd);
                         toggleState(); 
                       }}
                       className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
