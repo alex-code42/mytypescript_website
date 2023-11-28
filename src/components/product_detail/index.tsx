@@ -24,8 +24,10 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
     const addToCart = useCartStore((state) => state.addToCart);
 
 
-    const [selectedColor, setSelectedColor] = useState("")
-    const [selectedSize, setSelectedSize] = useState("")
+    const [selectedColor, setSelectedColor] = useState<string>("")
+    const [selectedSize, setSelectedSize] = useState<string>("")
+    console.log("this is the selected color",selectedColor);
+    console.log("this is the selected size",selectedSize);
 
 console.log("this is the productssssss",productss);
 

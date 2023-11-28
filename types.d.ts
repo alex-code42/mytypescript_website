@@ -1,8 +1,7 @@
 export interface Item {
   id: string;
   image: string;
-  size: string;
-  color: string;
+  color: Colors;
   title: string;
   subtitle: string;
   slug: string;
@@ -16,13 +15,21 @@ export interface Item {
   // Add any other missing properties
   imageAlt: string;
   href: string;
+  size: {
+    name: string[];
+    inStock: boolean;
+        };
+  };
     
-  }
+  
 
   interface AddedItem {
     id: string;
     image: string;
-    size: string;
+    size: {
+      name: string[];
+      inStock: boolean;
+          };    
     color: string;
     title: string;
     subtitle: string;
@@ -115,7 +122,7 @@ export interface ProductDetails extends EntrySkeletonType, Item {
 
 
 interface Sizes {
-  name: string;
+  name: string[];
   inStock: boolean;
 
 }
