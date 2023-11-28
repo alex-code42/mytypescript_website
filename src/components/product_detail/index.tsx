@@ -151,7 +151,7 @@ console.log("this is the productssssss",productss);
                   <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
                     <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
                     <div className="flex items-center space-x-3">
-                      {productss?.fields?.colors.map((color: any) => (
+                      {productss?.fields?.colors.map((color) => (
                         <RadioGroup.Option
                           key={color.name}
                           value={color}
@@ -192,7 +192,7 @@ console.log("this is the productssssss",productss);
                   <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
                     <RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
                     <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                      {productss?.fields?.sizes.map((size: any) => (
+                      {productss?.fields?.sizes.map((size) => (
                         <RadioGroup.Option
                           key={size.name}
                           value={size}
@@ -253,7 +253,7 @@ console.log("this is the productssssss",productss);
                           color: selectedColor,
                         };
 
-                        addToCart(productToAdd as any)
+                        addToCart(productToAdd)
                         toggleState(); 
                       }}
                       className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -278,7 +278,7 @@ console.log("this is the productssssss",productss);
   
                 <div className="mt-4">
                   <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                    {productss?.fields?.hightlights?.map((highlight : any) => (
+                    {productss?.fields?.hightlights?.map((highlight) => (
                       <li key={highlight} className="text-gray-400">
                         <span className="text-gray-600">{highlight}</span>
                       </li>
