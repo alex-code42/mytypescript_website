@@ -1,13 +1,13 @@
-// export interface Item {
-//     id: string;
-//     productName: string;
-//     price: number;
-//     image: string;
-//     color: { name: string };
-//     size: { name: string };
-//     imageAlt: string;
-//     href: string; // Add the href property
-//   }
+export interface Item {
+    id: string;
+    productName: string;
+    price: number;
+    image: string;
+    color: { name: string };
+    size: { name: string };
+    imageAlt: string;
+    href: string; // Add the href property
+  }
   
 
 
