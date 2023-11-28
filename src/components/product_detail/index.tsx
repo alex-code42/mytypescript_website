@@ -20,12 +20,12 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
 
   
   export default function ProductDetail({productss} : {productss: ProductDetails}) {
-    const { isTrue, toggleState } = useOpenShoppingCard(); // Use the state and toggle function
+    const { isTrue, toggleState } = useOpenShoppingCard(); 
     const addToCart = useCartStore((state) => state.addToCart);
 
 
-    const [selectedColor, setSelectedColor] = useState<string>("")
-    const [selectedSize, setSelectedSize] = useState<string>("")
+    const [selectedColor, setSelectedColor] = useState("")
+    const [selectedSize, setSelectedSize] = useState("")
     console.log("this is the selected color",selectedColor);
     console.log("this is the selected size",selectedSize);
 
@@ -159,7 +159,7 @@ console.log("this is the productssssss",productss);
                           value={color}
                           className={({ active, checked }) =>
                             classNames(
-                              color.selectedClass,
+                              color.name,
                               active && checked ? 'ring ring-offset-1' : '',
                               !active && checked ? 'ring-2' : '',
                               'relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none'
@@ -170,9 +170,9 @@ console.log("this is the productssssss",productss);
                             {color.name}
                           </RadioGroup.Label>
                           <span
-                            aria-hidden="true"
+                            // aria-hidden="true"
                             className={classNames(
-                              color.class,
+                              color.name,
                               'h-8 w-8 rounded-full border border-black border-opacity-10'
                             )}
                           />
@@ -186,33 +186,31 @@ console.log("this is the productssssss",productss);
                 <div className="mt-10">
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                    <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                      Size guide
-                    </a>
+                   
                   </div>
   
                   <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
                     <RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
                     <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                      {productss?.fields?.sizes.map((size) => (
+                      {productss?.fields?.sizes.map((size : any) => (
                         <RadioGroup.Option
-                          key={size.name}
+                          key={size}
                           value={size}
-                          disabled={!size.inStock}
+                          disabled={!size}
                           className={({ active }) =>
                             classNames(
                               size.inStock
-                                ? 'cursor-pointer bg-white text-gray-900 shadow-sm'
-                                : 'cursor-not-allowed bg-gray-50 text-gray-200',
-                              active ? 'ring-2 ring-indigo-500' : '',
+                                ? 'cursor-pointer bg-white text-gray-500 shadow-sm '
+                                : 'cursor-pointer bg-white text-gray-500 shadow-sm',
+                              active ? 'ring-2 ring-indigo-500 hover:bg-gray-50' : '',
                               'group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6'
                             )
                           }
                         >
                           {({ active, checked }) => (
                             <>
-                              <RadioGroup.Label as="span">{size.name}</RadioGroup.Label>
-                              {size.inStock ? (
+                              <RadioGroup.Label as="span">"{size}"</RadioGroup.Label>
+                              {/* {size.inStock ? (
                                 <span
                                   className={classNames(
                                     active ? 'border' : 'border-2',
@@ -235,7 +233,7 @@ console.log("this is the productssssss",productss);
                                     <line x1={0} y1={100} x2={100} y2={0} vectorEffect="non-scaling-stroke" />
                                   </svg>
                                 </span>
-                              )}
+                              )} */}
                             </>
                           )}
                         </RadioGroup.Option>
@@ -267,7 +265,7 @@ console.log("this is the productssssss",productss);
                           href: "",
                         };
 
-                        addToCart(productToAdd);
+                        addToCart(productToAdd as Item);
                         toggleState(); 
                       }}
                       className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"

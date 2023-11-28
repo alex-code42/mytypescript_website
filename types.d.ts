@@ -1,7 +1,9 @@
 export interface Item {
   id: string;
   image: string;
-  color: Colors;
+  color: color;
+  sizes: Sizes;
+  size: string;
   title: string;
   subtitle: string;
   slug: string;
@@ -15,10 +17,8 @@ export interface Item {
   // Add any other missing properties
   imageAlt: string;
   href: string;
-  size: {
-    name: string[];
-    inStock: boolean;
-        };
+  
+    
   };
     
   
@@ -26,10 +26,7 @@ export interface Item {
   interface AddedItem {
     id: string;
     image: string;
-    size: {
-      name: string[];
-      inStock: boolean;
-          };    
+    size: string;    
     color: string;
     title: string;
     subtitle: string;
@@ -91,7 +88,6 @@ export interface SmallBlogPost{
     titleImage: Asset;
 
   };
-  
 }
 
 export interface ProductDetails extends EntrySkeletonType, Item {
@@ -119,10 +115,17 @@ export interface ProductDetails extends EntrySkeletonType, Item {
   };
 }
 
+interface Colors {
+  name: string;
+  inStock: boolean;
+  selectedClass: string;
+  class: string;
+
+}
 
 
 interface Sizes {
-  name: string[];
+  name: string;
   inStock: boolean;
 
 }
