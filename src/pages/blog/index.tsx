@@ -2,6 +2,7 @@ import TravelBlogPost from "@/components/blog/article";
 import Collections from "@/components/collections";
 import { log } from "console";
 import  { createClient } from 'contentful'
+import { BlogPost } from "../../../types";
 
 
 export async function getStaticProps() {
@@ -11,8 +12,9 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_KEY || ''
   })
 
-  const res = await client.getEntries({ content_type: 'blog' })
+  const res = await client.getEntries<BlogPost>({ content_type: 'blog' })
   log("this is the res",res);
+  
   return {
 
     props: {
@@ -21,7 +23,7 @@ export async function getStaticProps() {
   }
 }
 
-export default function BlogIndexPage({blog } : {blog: any}) {
+export default function BlogIndexPage({blog } : {blog: BlogPost[]}) {
   console.log("this is the blog-xxx",blog);
   return (
     <div>
