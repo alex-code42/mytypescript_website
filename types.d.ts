@@ -11,7 +11,6 @@ export interface Item {
   
   interface EntrySkeletonType {
     contentTypeId: string;
-    // other common properties for Contentful entries
 }
 
 
