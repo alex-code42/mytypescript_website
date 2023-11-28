@@ -4,7 +4,7 @@ import { products } from '../productlist/productlist'
 import { useRouter } from 'next/router'
 import useOpenShoppingCard from '../zustand'
 import useCartStore from '../zustand/cartStore'
-import { AddedItem, Item, ProductDetails } from '../../../types'
+import {  Item, ProductDetails } from '../../../types'
 
 
   
@@ -155,24 +155,24 @@ console.log("this is the productssssss",productss);
                     <div className="flex items-center space-x-3">
                       {productss?.fields?.colors.map((color) => (
                         <RadioGroup.Option
-                          key={color.name}
+                          key={color}
                           value={color}
                           className={({ active, checked }) =>
                             classNames(
-                              color.name,
                               active && checked ? 'ring ring-offset-1' : '',
                               !active && checked ? 'ring-2' : '',
                               'relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none'
                             )
                           }
+                          style={{ backgroundColor: color }}
                         >
                           <RadioGroup.Label as="span" className="sr-only">
-                            {color.name}
+                            {color}
                           </RadioGroup.Label>
                           <span
                             // aria-hidden="true"
                             className={classNames(
-                              color.name,
+                              color,
                               'h-8 w-8 rounded-full border border-black border-opacity-10'
                             )}
                           />
@@ -246,7 +246,7 @@ console.log("this is the productssssss",productss);
                       type="button"
                       onClick={() => {
                         // Create a product object with selected color and size
-                        const productToAdd : AddedItem = {
+                        const productToAdd : Item = {
                           id: productss.sys.id,
                           image: productss.fields.images[0].fields.file.url,
                           size: selectedSize,
@@ -263,12 +263,14 @@ console.log("this is the productssssss",productss);
                           price: productss.fields.price,
                           imageAlt: "",
                           href: "",
+                          sizes: productss.fields.sizes,
                         };
 
-                        addToCart(productToAdd as Item);
+                        addToCart(productToAdd);
                         toggleState(); 
                       }}
-                      className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      className="disabled:opacity-50 mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      disabled={!selectedSize || !selectedColor}
                     >
                       Add to bag
                   </button>

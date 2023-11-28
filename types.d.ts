@@ -2,7 +2,7 @@ export interface Item {
   id: string;
   image: string;
   color: color;
-  sizes: Sizes;
+  sizes: string[];
   size: string;
   title: string;
   subtitle: string;
@@ -21,28 +21,6 @@ export interface Item {
     
   };
     
-  
-
-  interface AddedItem {
-    id: string;
-    image: string;
-    size: string;    
-    color: string;
-    title: string;
-    subtitle: string;
-    slug: string;
-    titleImage: Asset;
-    description: RichTextContent;
-    conclusion: RichTextContent;
-    comments: string;
-    productName: string;
-    images: Image[];
-    price: number;
-    // Add any other missing properties
-    imageAlt: string;
-    href: string;
-    // ...
-  }
   
   interface EntrySkeletonType {
     contentTypeId: string;
@@ -109,8 +87,8 @@ export interface ProductDetails extends EntrySkeletonType, Item {
     shortDescription: string;
     details: RichTextContent;
     hightlights: string[];
-    sizes: Sizes[];
-    colors: Colors[];
+    sizes: string[];
+    colors: string[];
     
   };
 }
