@@ -2,13 +2,14 @@ import Link from "next/link"
 import { products } from "./productlist"
 import Image from 'next/image'
 import { Console } from "console";
+import { ProductDetails } from "../../../types";
 
 
 console.log(products);
 
 
   
-  export default function ProductList({productss} : {productss: any}) {
+  export default function ProductList({productss} : {productss: ProductDetails[]}) {
 
 
     return (
@@ -17,12 +18,12 @@ console.log(products);
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">Collection</h2>
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {productss?.map((product: any) => (
+            {productss?.map((product) => (
               <div key={product.sys.id} className="group relative">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                   <img
                     src={product.fields.images[0].fields.file.url}
-                    alt={product.fields.images[0].alt}
+                    alt="bla"
                     className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                   />
                 </div>

@@ -2,7 +2,7 @@
 import Collections from "@/components/collections";
 import ProductList from "@/components/productlist";
 import  { createClient } from 'contentful'
-import { BlogPost } from "../../../types";
+import { BlogPost, ProductDetails } from "../../../types";
 
 
 export async function getStaticProps() {
@@ -24,7 +24,7 @@ export async function getStaticProps() {
 
 
   
-  export default function MyTshirtPage({productss,blog } : {productss: any, blog: BlogPost[]}) {
+  export default function MyTshirtPage({productss,blog } : {productss: ProductDetails[], blog: BlogPost[]}) {
     console.log("this is the blogs-zzz",blog);
     
     return (

@@ -55,3 +55,56 @@ export interface SmallBlogPost{
   };
   
 }
+
+export interface ProductDetails extends EntrySkeletonType {
+  metadata: {
+    tags: [];
+  };
+  sys: AssetSys;
+  fields: {
+    title: string;
+    subtitle: string;
+    slug: string;
+    titleImage: Asset;
+    description: RichTextContent;
+    conclusion: RichTextContent;
+    comments: string;
+    productName: string;
+    images: Image[];
+    price: number;
+    shortDescription: string;
+    details: RichTextContent;
+    hightlights: string[];
+    sizes: string[];
+    colors: string[];
+    
+  };
+}
+
+
+interface ImageDetails {
+  size: number;
+  image: {
+    width: number;
+    height: number;
+  };
+}
+
+interface ImageFile {
+  url: string;
+  details: ImageDetails;
+  fileName: string;
+  contentType: string;
+}
+
+interface ImageFields {
+  title: string;
+  description: string;
+  file: ImageFile;
+}
+
+interface Image {
+  metadata: ImageMetadata;
+  sys: ImageSys;
+  fields: ImageFields;
+}
