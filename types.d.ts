@@ -1,12 +1,47 @@
 export interface Item {
+  id: string;
+  image: string;
+  color: color;
+  sizes: Sizes;
+  size: string;
+  title: string;
+  subtitle: string;
+  slug: string;
+  titleImage: Asset;
+  description: RichTextContent;
+  conclusion: RichTextContent;
+  comments: string;
+  productName: string;
+  images: Image[];
+  price: number;
+  // Add any other missing properties
+  imageAlt: string;
+  href: string;
+  
+    
+  };
+    
+  
+
+  interface AddedItem {
     id: string;
-    productName: string;
-    price: number;
     image: string;
-    color: { name: string };
-    size: { name: string };
+    size: string;    
+    color: string;
+    title: string;
+    subtitle: string;
+    slug: string;
+    titleImage: Asset;
+    description: RichTextContent;
+    conclusion: RichTextContent;
+    comments: string;
+    productName: string;
+    images: Image[];
+    price: number;
+    // Add any other missing properties
     imageAlt: string;
-    href: string; // Add the href property
+    href: string;
+    // ...
   }
   
   interface EntrySkeletonType {
@@ -53,10 +88,9 @@ export interface SmallBlogPost{
     titleImage: Asset;
 
   };
-  
 }
 
-export interface ProductDetails extends EntrySkeletonType {
+export interface ProductDetails extends EntrySkeletonType, Item {
   metadata: {
     tags: [];
   };
@@ -75,12 +109,26 @@ export interface ProductDetails extends EntrySkeletonType {
     shortDescription: string;
     details: RichTextContent;
     hightlights: string[];
-    sizes: string[];
-    colors: string[];
+    sizes: Sizes[];
+    colors: Colors[];
     
   };
 }
 
+interface Colors {
+  name: string;
+  inStock: boolean;
+  selectedClass: string;
+  class: string;
+
+}
+
+
+interface Sizes {
+  name: string;
+  inStock: boolean;
+
+}
 
 interface ImageDetails {
   size: number;

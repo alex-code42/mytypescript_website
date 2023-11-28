@@ -141,6 +141,8 @@ export function ProductsInCheckout(){
     const removeFromCart = useCartStore((state) => state.removeFromCart);
     const [isClient, setIsClient] = useState(false)
     const totalPrice = cartItems.reduce((total, product) => total + product.price, 0);
+    console.log("this are the itemsss-->>",cartItems);
+    
   console.log(totalPrice);
  
     useEffect(() => {
@@ -173,7 +175,7 @@ export function ProductsInCheckout(){
                                     {/* <p className="mt-1 text-sm text-gray-500">{product.color}</p> */}
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm">
-                                    <p suppressHydrationWarning className="text-gray-500">Size: {product?.size?.name} - Color: {product?.color?.name}</p>
+                                    <p className="text-gray-500">Size: {product?.size} - Color: {product?.color}</p>
 
                                     <div className="flex">
                                       <button
