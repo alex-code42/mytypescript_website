@@ -9,7 +9,10 @@ export interface Item {
     href: string; // Add the href property
   }
   
-
+  interface EntrySkeletonType {
+    contentTypeId: string;
+    // other common properties for Contentful entries
+}
 
 
 
@@ -23,7 +26,7 @@ export interface ContentfulText {
 }
 
 
-export interface BlogPost {
+export interface BlogPost extends EntrySkeletonType {
   metadata: {
     tags: [];
   };
