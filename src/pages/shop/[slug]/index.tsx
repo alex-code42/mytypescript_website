@@ -4,7 +4,7 @@ import ProductDetail from "@/components/product_detail"
 import { useRouter } from 'next/router.js';
 
 import { createClient } from 'contentful'
-import { ProductDetails } from "../../../../types";
+import { ProductDetails,Params } from "../../../../types";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID || '',
@@ -28,7 +28,8 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params }:any) => {
+export const getStaticProps = async ({ params }: {params : Params}) => {
+  console.log("this is the params",params);
     const { items } = await client.getEntries({
       content_type: 'product',
       'fields.slug': params.slug
