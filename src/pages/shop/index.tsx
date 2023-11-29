@@ -3,6 +3,7 @@ import Collections from "@/components/collections";
 import ProductList from "@/components/productlist";
 import  { createClient } from 'contentful'
 import { BlogPost, ProductDetails } from "../../../types";
+import Search from "@/components/search/Search"
 
 
 export async function getStaticProps() {
@@ -25,10 +26,13 @@ export async function getStaticProps() {
 
   
   export default function MyTshirtPage({productss,blog } : {productss: ProductDetails[], blog: BlogPost[]}) {
-    console.log("this is the blogs-zzz",blog);
+    console.log("this is the Products in the Shop",productss);
     
     return (
       <div>
+         <div className="tc bg-green ma0 pa4 min-vh-100">
+      <Search productss={productss}/>
+    </div>
       <ProductList productss={productss}/>
       <Collections blog={blog}/>
       </div>
