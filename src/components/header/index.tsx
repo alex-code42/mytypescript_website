@@ -18,7 +18,7 @@ export default function Header({ blog }: { blog: SmallBlogPost[] }) {
                         {firstBlogPost.fields.subtitle}                        
                         </p>
                         
-                        <a href={`/blog/${firstBlogPost.fields.slug}`} className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                        <a href={`/blog/${firstBlogPost.fields.slug}`} className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 bg-emerald-500">
                             Read the blog
                         </a> 
                     </div>
