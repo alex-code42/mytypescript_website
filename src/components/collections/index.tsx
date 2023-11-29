@@ -28,7 +28,7 @@ const callouts = [
   ]
 
   export default function Collections({blog } : {blog: BlogPost[]}) {
-    console.log("this is the blog-yyz",blog[0].fields.titleImage.fields.file.url);
+    // console.log("this is the blog-yyz",blog[0].fields.titleImage.fields.file.url);
     return (
       <div className="bg-gray-100 -z-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">

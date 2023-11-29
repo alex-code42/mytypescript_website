@@ -24,7 +24,7 @@ export async function getStaticProps() {
 }
 
 export default function BlogIndexPage({blog } : {blog: BlogPost[]}) {
-  console.log("this is the blog-xxx",blog);
+  // console.log("this is the blog-xxx",blog);
   return (
     <div>
       <Collections blog={blog}/>

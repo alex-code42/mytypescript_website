@@ -4,13 +4,13 @@ import { BlogPost } from '../../../../types';
 import { ContentfulText } from '../../../../types';
 
 const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
-  console.log("this is the blog-yyz",blog.fields.titleImage.fields.file.url);
+  // console.log("this is the blog-yyz",blog.fields.titleImage.fields.file.url);
   
 
 
   return (
     <div>
-      <div className="h-[50vh] bg-gray-50 flex items-center mb-2 mt-8">
+      <div className="h-[50vh] bg-gray-900 flex items-center mb-2 mt-8">
         <section
           className="w-full bg-cover bg-center py-32 mb-3"
           style={{ backgroundImage: `url(${blog.fields.titleImage.fields.file.url})` }}
@@ -23,15 +23,15 @@ const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
       </div>
       <section className="bg-white dark:bg-gray-900 mt-8">
         <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-          <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-            <h2 className="mb-4 text-xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+          <div className="font-light text-gray-500 sm:text-lg dark:text-gray-100">
+            <h2 className="mb-4 text-xl tracking-tight font-extrabold text-gray-100 dark:text-white">
             {blog.fields.subtitle}
             </h2>
             <p className="mb-4">
             
             {blog?.fields.description.content.map((text: ContentfulText) => (
                 <div key={text?.sys?.id} className="group relative">
-                 <p className="text-base text-gray-900 mb-8">{text.content[0].value}</p>
+                 <p className="text-base text-gray-100 mb-8">{text.content[0].value}</p>
                 </div>
               ))}
 
@@ -53,7 +53,7 @@ const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
             <p className="mb-4">
             {blog?.fields?.conclusion?.content.map((text: ContentfulText) => (
                 <div key={text?.sys?.id} className="group relative">
-                 <p className="text-base text-gray-900 mb-8">{text.content[0].value}</p>
+                 <p className="text-base text-gray-100 mb-8">{text.content[0].value}</p>
                 </div>
               ))}
             </p>

@@ -141,9 +141,9 @@ export function ProductsInCheckout(){
     const removeFromCart = useCartStore((state) => state.removeFromCart);
     const [isClient, setIsClient] = useState(false)
     const totalPrice = cartItems.reduce((total, product) => total + product.price, 0);
-    console.log("this are the itemsss-->>",cartItems);
+    // console.log("this are the itemsss-->>",cartItems);
     
-  console.log(totalPrice);
+  // console.log(totalPrice);
  
     useEffect(() => {
       setIsClient(true)
