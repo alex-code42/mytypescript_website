@@ -249,7 +249,7 @@ console.log("this is the productssssss",productss);
                         const productToAdd : Item = {
                           id: productss.sys.id,
                           image: productss.fields.images[0].fields.file.url,
-                          size: selectedSize,
+                          chosenSize: selectedSize,
                           color: selectedColor,
                           title: productss.fields.title,
                           subtitle: productss.fields.subtitle,

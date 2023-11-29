@@ -3,7 +3,7 @@ export interface Item {
   image: string;
   color: color;
   sizes: string[];
-  size: string;
+  chosenSize: string;
   title: string;
   subtitle: string;
   slug: string;
@@ -14,7 +14,6 @@ export interface Item {
   productName: string;
   images: Image[];
   price: number;
-  // Add any other missing properties
   imageAlt: string;
   href: string;
   
