@@ -3,6 +3,7 @@ import Collections from '@/components/collections'
 import  { createClient } from 'contentful'
 import Header from '@/components/header';
 import { BlogPost, ProductDetails } from '../../types';
+import AboutUs from '@/components/aboutus';
 
 
 export async function getStaticProps() {
@@ -22,8 +23,6 @@ export async function getStaticProps() {
   };
 }
 
-
-  
   export default function MyPage({productss,blog } : {productss: ProductDetails[], blog: BlogPost[]}) {
     console.log("this is the blogs-zzz",blog);
     
@@ -32,6 +31,7 @@ export async function getStaticProps() {
         <Header blog={blog}/>
         
       <ProductList productss={productss}/>
+      <AboutUs />
       <Collections blog={blog}/>
 
       

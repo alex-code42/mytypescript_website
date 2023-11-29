@@ -241,7 +241,7 @@ return(<>
         </Transition.Root>
   
         <header className="relative bg-white">
-          <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+          <p className="flex h-10 items-center justify-center bg-emerald-500 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
             Get free delivery on orders over $100
           </p>
   
@@ -261,10 +261,10 @@ return(<>
                 {/* Logo */}
                 <div className="ml-4 flex lg:ml-0">
                   <a href="/">
-                    <span className="sr-only">Your Company</span>
+                    <span className="sr-only">Cloth are good</span>
                     <img
                       className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                      src="https://www.reshot.com/preview-assets/icons/GW8UERZHVP/brandenburg-gate-GW8UERZHVP.svg?color=indigo&shade=600"
                       alt=""
                     />
                   </a>
