@@ -10,8 +10,8 @@ export default function AboutUs() {
                       src="https://www.reshot.com/preview-assets/icons/GW8UERZHVP/brandenburg-gate-GW8UERZHVP.svg?color=indigo&shade=600"
                       alt=""
                     />
-                <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">BerlinVogue Collective</h1>
-                <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Discover the epitome of style at BerlinVogue Collective, a dynamic online fashion destination nestled in the heart of Berlin. Immerse yourself in the vibrant fashion scene of the city as we curate a collection that effortlessly blends Berlin's eclectic spirit with contemporary trends.</p>
+                <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black">BerlinVogue Collective</h1>
+                <p className="mb-8 text-lg font-normal text-slate-100 lg:text-xl sm:px-16 xl:px-48 dark:text-slate-100">Discover the epitome of style at BerlinVogue Collective, a dynamic online fashion destination nestled in the heart of Berlin. Immerse yourself in the vibrant fashion scene of the city as we curate a collection that effortlessly blends Berlin's eclectic spirit with contemporary trends.</p>
             </div>
       </section>
     </div>

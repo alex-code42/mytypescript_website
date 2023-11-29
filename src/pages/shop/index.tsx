@@ -33,7 +33,6 @@ export async function getStaticProps() {
          <div className="tc bg-green ma0 pa4 min-vh-100">
       <Search productss={productss}/>
     </div>
-      <ProductList productss={productss}/>
       <Collections blog={blog}/>
       </div>
     );
