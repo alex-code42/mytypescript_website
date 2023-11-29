@@ -101,10 +101,15 @@ interface Colors {
 }
 
 
-interface Sizes {
-  name: string;
-  inStock: boolean;
+export interface Sizes {
+  size: string;
+  // inStock: boolean;
 
+}
+
+export interface chosenSize {
+size: string;
+inStock: boolean;
 }
 
 interface ImageDetails {
@@ -132,4 +137,9 @@ interface Image {
   metadata: ImageMetadata;
   sys: ImageSys;
   fields: ImageFields;
+}
+
+interface Params {
+  [key: string]: string;
+  slug: string;
 }

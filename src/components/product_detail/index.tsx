@@ -4,7 +4,7 @@ import { products } from '../productlist/productlist'
 import { useRouter } from 'next/router'
 import useOpenShoppingCard from '../zustand'
 import useCartStore from '../zustand/cartStore'
-import {  Item, ProductDetails } from '../../../types'
+import {  Item, ProductDetails,Sizes, chosenSize } from '../../../types'
 
 
   
@@ -192,14 +192,14 @@ console.log("this is the productssssss",productss);
                   <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
                     <RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
                     <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                      {productss?.fields?.sizes.map((size: any) => (
+                      {productss?.fields?.sizes.map((size: string ) => (
                         <RadioGroup.Option
                           key={size}
                           value={size}
                           disabled={!size}
                           className={({ active }) =>
                             classNames(
-                              size.inStock
+                              size
                                 ? 'cursor-pointer bg-white text-gray-500 shadow-sm '
                                 : 'cursor-pointer bg-white text-gray-500 shadow-sm',
                               active ? 'ring-2 ring-indigo-500 hover:bg-gray-50' : '',
