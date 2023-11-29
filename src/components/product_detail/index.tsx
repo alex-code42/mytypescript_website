@@ -26,10 +26,10 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
 
     const [selectedColor, setSelectedColor] = useState("")
     const [selectedSize, setSelectedSize] = useState("")
-    console.log("this is the selected color",selectedColor);
-    console.log("this is the selected size",selectedSize);
+    // console.log("this is the selected color",selectedColor);
+    // console.log("this is the selected size",selectedSize);
 
-console.log("this is the productssssss",productss);
+// console.log("this is the productssssss",productss);
 
   const router = useRouter();
   const { isReady, query } = router;
@@ -39,11 +39,11 @@ console.log("this is the productssssss",productss);
         }
     const { id } = query;
     const filteredProduct = products.filter(product => product.id === id)
-    console.log("This is the filtered product",filteredProduct[0]);
+    // console.log("This is the filtered product",filteredProduct[0]);
     
     
     const product = filteredProduct[0]
-    console.log("this is the product",product);
+    // console.log("this is the product",product);
 
 
   

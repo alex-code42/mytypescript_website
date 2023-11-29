@@ -29,7 +29,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }: {params : Params}) => {
-  console.log("this is the params",params);
+  // console.log("this is the params",params);
     const { items } = await client.getEntries({
       content_type: 'product',
       'fields.slug': params.slug
@@ -47,7 +47,7 @@ export default function ProductDetailPage({product} : {product: ProductDetails})
     const router = useRouter();
   const { isReady } = router;
   const { id }= router.query;
-  console.log("this is the recipe",product);
+  // console.log("this is the recipe",product);
 
   
     return(

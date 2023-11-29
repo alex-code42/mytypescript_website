@@ -27,7 +27,7 @@ export async function getStaticProps() {
 
   
   export default function MyTshirtPage({productss,blog } : {productss: ProductDetails[], blog: BlogPost[]}) {
-    console.log("this is the Products in the Shop",productss);
+    // console.log("this is the Products in the Shop",productss);
     
     return (
       <div>

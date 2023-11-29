@@ -20,9 +20,9 @@ export default function ShoppingCart() {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const clearCart = useCartStore((state) => state.clearCart);
 
-  console.log("this are the items",cartItems);
+  // console.log("this are the items",cartItems);
   const totalPrice = cartItems.reduce((total, product) => total + product.price, 0);
-  console.log(totalPrice);
+  // console.log(totalPrice);
   
 
 
@@ -102,7 +102,7 @@ export default function ShoppingCart() {
                                     <div className="flex">
                                       <button
                                         type="button"
-                                        onClick={() => {removeFromCart(product.id); console.log("removing")}}
+                                        onClick={() => {removeFromCart(product.id)}}
 
                                         className="font-medium text-indigo-600 hover:text-indigo-500"
                                       >

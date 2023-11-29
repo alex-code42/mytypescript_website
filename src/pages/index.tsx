@@ -25,7 +25,7 @@ export async function getStaticProps() {
 }
 
   export default function MyPage({productss,blog } : {productss: ProductDetails[], blog: BlogPost[]}) {
-    console.log("this is the blogs-zzz",blog);
+    // console.log("this is the blogs-zzz",blog);
     
     return (
       <div>
@@ -33,7 +33,6 @@ export async function getStaticProps() {
             <title>BerlinVogue Collective → → ✅ 😀 ✅  Go Shopping and support Berlin Based Collective</title>
             <meta name="Discover the epitome of style at BerlinVogue Collective, a dynamic online fashion destination nestled in the heart of Berlin. " content="More to come" />
             <meta property="og:image" content="https://images.ctfassets.net/lr057rk03c3t/1LG3GPG1VM8x5KvVZqbdi6/b822143e8e571ba75d5bddc2b38a021d/philip-martin-CPXPFi3POLw-unsplash.jpg" />
-
         </Helmet>
         <Header blog={blog}/>
         

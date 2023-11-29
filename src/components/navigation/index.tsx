@@ -84,12 +84,12 @@ const navigation = {
     const cartItems = useCartStore((state) => state.items);
     
     const cartItemCount = useCartItemCount();
-    console.log("this is the count",cartItemCount);
+    // console.log("this is the count",cartItemCount);
     
 
 
     const cartColor = cartItemCount === 0 && isClient ? 'text-gray-500' : 'text-gray-900';
-    console.log(cartColor);
+    // console.log(cartColor);
     
 
     

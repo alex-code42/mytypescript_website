@@ -6,7 +6,7 @@ import { ProductDetails } from "../../../types";
 import Card from "../search/Card";
 
 
-console.log(products);
+// console.log(products);
 
 
   
