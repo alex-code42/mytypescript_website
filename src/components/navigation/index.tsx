@@ -35,7 +35,7 @@ const navigation = {
             id: 'blog',
             name: 'Blog',
             items: [
-              { name: 'Crafting Style in the Heart of Cuba', href: '#/blog/havana-threads-crafting-style-in-the-heart-of-cuba' },
+              { name: 'Crafting Style in the Heart of Cuba', href: '/blog/havana-threads-crafting-style-in-the-heart-of-cuba' },
               { name: 'In Praise of Denim', href: '/blog/in-praise-of-the-denim' },
               { name: 'Fashion in Rio: Haute Couture with a Tropical Twist', href: '/blog/fashion-in-rio' },
               
