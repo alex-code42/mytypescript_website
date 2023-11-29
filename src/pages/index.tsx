@@ -4,6 +4,7 @@ import  { createClient } from 'contentful'
 import Header from '@/components/header';
 import { BlogPost, ProductDetails } from '../../types';
 import AboutUs from '@/components/aboutus';
+import { Helmet } from 'react-helmet';
 
 
 export async function getStaticProps() {
@@ -28,14 +29,17 @@ export async function getStaticProps() {
     
     return (
       <div>
+        <Helmet>
+            <title>BerlinVogue Collective → → ✅ 😀 ✅  Go Shopping and support Berlin Based Collective</title>
+            <meta name="Discover the epitome of style at BerlinVogue Collective, a dynamic online fashion destination nestled in the heart of Berlin. " content="More to come" />
+            <meta property="og:image" content="https://images.ctfassets.net/lr057rk03c3t/1LG3GPG1VM8x5KvVZqbdi6/b822143e8e571ba75d5bddc2b38a021d/philip-martin-CPXPFi3POLw-unsplash.jpg" />
+
+        </Helmet>
         <Header blog={blog}/>
         
       <ProductList productss={productss}/>
       <AboutUs />
       <Collections blog={blog}/>
-
-      
-      
       </div>
     );
   }
