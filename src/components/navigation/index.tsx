@@ -28,26 +28,28 @@ const navigation = {
             imageSrc: 'https://images.ctfassets.net/lr057rk03c3t/6xPIqfELbEfKSTUnLIkXxY/c544a3f0edf0cf9a924fa88fbdc98b53/philip-martin-CPXPFi3POLw-unsplash.jpg',
             imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
           },
+          
         ],
         sections: [
           {
-            id: 'travel',
-            name: 'Travel',
+            id: 'blog',
+            name: 'Blog',
             items: [
-              { name: 'Jordan', href: '#' },
-              { name: 'Marocco', href: '#' },
-              { name: 'Paris', href: '#' },
+              { name: 'Crafting Style in the Heart of Cuba', href: '#/blog/havana-threads-crafting-style-in-the-heart-of-cuba' },
+              { name: 'In Praise of Denim', href: '/blog/in-praise-of-the-denim' },
+              { name: 'Fashion in Rio: Haute Couture with a Tropical Twist', href: '/blog/fashion-in-rio' },
               
              
             ],
           },
           {
-            id: 'fashion',
-            name: 'Fashion',
+            id: 'products',
+            name: 'Products',
             items: [
-              { name: 'Shoes', href: '#' },
-              { name: 'Wallets', href: '#' },
-              { name: 'Bags', href: '#' },
+              { name: 'Basic Tee 6-Pack', href: '/shop/basic-tee-6-pack' },
+              { name: 'Special Denim Jeans Nr.128', href: '/shop/special-jeans' },
+              { name: 'Luxury Bag', href: '/shop/luxury-bag' },
+              { name: 'Nike Sport Shoe', href: '/shop/nike-sport-shoe' },
               
             ],
           }
