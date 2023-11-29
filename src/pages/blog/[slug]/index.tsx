@@ -2,6 +2,7 @@ import TravelBlogPost from "@/components/blog/article";
 import { createClient } from 'contentful'
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { BlogPost } from "../../../../types";
+import AboutUs from '@/components/aboutus';
 
 interface BlogPostParams extends Record<string, string | string[]> {
   slug: string;
@@ -50,6 +51,7 @@ export default function BlogIndexPage({ blog }: { blog: BlogPost }) {
   return (
     <div>
       <TravelBlogPost blog={blog}/>
+      <AboutUs />
     </div>
   );
 }
