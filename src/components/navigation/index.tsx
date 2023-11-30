@@ -241,7 +241,7 @@ return(<>
         </Transition.Root>
   
         <header className="relative bg-white">
-          <p className="flex h-10 items-center justify-center bg-emerald-500 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+          <p className="flex h-10 items-center justify-center bg-emerald-500 dark:bg-emerald-950 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
             Get free delivery on orders over $100
           </p>
   
