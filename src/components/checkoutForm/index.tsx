@@ -14,7 +14,7 @@ export default function CheckoutForm() {
 
   return (
     <form>
-    <div suppressHydrationWarning className="px-36 bg-white">
+    <div suppressHydrationWarning className=" p-8">
       <div className="space-y-12">
         
         <div className="border-b py-8 bg-white pb-12">
@@ -125,7 +125,7 @@ export default function CheckoutForm() {
         </button>
         <button
           type="submit"
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className="rounded-md bg-emerald-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Jetzt Bestellen
         </button>
@@ -151,7 +151,7 @@ export function ProductsInCheckout(){
 
     return(
         <div>
-            <div className="mt-8 bg-white px-36">
+            <div className="mt-8 p-8">
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
                             {isClient && cartItems?.map((product:Item) => (
@@ -182,7 +182,7 @@ export function ProductsInCheckout(){
                                         type="button"
                                         onClick={() => {removeFromCart(product.id); console.log("removing")}}
                                         suppressHydrationWarning
-                                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                                        className="font-medium text-emerald-600 hover:text-emerald-900"
                                       >
                                         Remove
                                       </button>
@@ -194,7 +194,7 @@ export function ProductsInCheckout(){
                             ))}
                           </ul>
                         </div>
-                        <hr className="border-t-2 border-indigo-700 mt-6"/>
+                        <hr className="border-t-2 border-emerald-500 mt-6"/>
 
                         <div className="mt-8 flex justify-between text-base font-medium text-gray-900">
                         <p>Gesamtpreis</p>
