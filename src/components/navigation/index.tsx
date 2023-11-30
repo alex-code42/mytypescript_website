@@ -88,7 +88,7 @@ const navigation = {
     
 
 
-    const cartColor = cartItemCount === 0 && isClient ? 'text-gray-500' : 'text-gray-900';
+    const cartColor = cartItemCount === 0 && isClient ? 'text-gray-500' : 'text-emerald-600';
     // console.log(cartColor);
     
 
@@ -396,7 +396,7 @@ return(<>
                         // suppressHydrationWarning 
                         aria-hidden="true"
                       />
-                      <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{isClient && cartItemCount}</span>
+                      <span className="ml-2 text-sm font-medium text-emerald-600 group-hover:text-gray-800">{isClient && cartItemCount}</span>
                       <span className="sr-only">items in cart, view bag</span>
                     </a>
                   </div>

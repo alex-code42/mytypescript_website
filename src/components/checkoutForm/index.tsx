@@ -125,7 +125,7 @@ export default function CheckoutForm() {
         </button>
         <button
           type="submit"
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className="rounded-md bg-emerald-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Jetzt Bestellen
         </button>
@@ -194,7 +194,7 @@ export function ProductsInCheckout(){
                             ))}
                           </ul>
                         </div>
-                        <hr className="border-t-2 border-indigo-700 mt-6"/>
+                        <hr className="border-t-2 border-emerald-500 mt-6"/>
 
                         <div className="mt-8 flex justify-between text-base font-medium text-gray-900">
                         <p>Gesamtpreis</p>
