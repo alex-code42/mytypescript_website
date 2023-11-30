@@ -18,6 +18,7 @@ Welcome to the My TypeScript Website project! This is a website built using Type
 - React
 - Zustand
 - Next.js
+- Contentful
 
 ## Getting Started
 
