@@ -180,7 +180,7 @@ export function ProductsInCheckout(){
                                     <div className="flex">
                                       <button
                                         type="button"
-                                        onClick={() => {removeFromCart(product.id); console.log("removing")}}
+                                        onClick={() => {removeFromCart(product.id)}}
                                         suppressHydrationWarning
                                         className="font-medium text-emerald-600 hover:text-emerald-900"
                                       >

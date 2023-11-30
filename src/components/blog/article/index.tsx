@@ -4,7 +4,7 @@ import { BlogPost } from '../../../../types';
 import { ContentfulText } from '../../../../types';
 
 const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
-  console.log("this is the blog-yyz",blog);
+  // console.log("this is the blog-yyz",blog);
   
 
 
