@@ -30,7 +30,7 @@ export async function getStaticProps() {
     // console.log("this is the Products in the Shop",productss);
     
     return (
-      <div className="bg-emerald-950">
+      <div className="">
         <Helmet>
             <title>BerlinVogue Collective → → ✅ 😀 ✅  Go Shopping and support Berlin Based Collective</title>
             <meta name="Discover the epitome of style at BerlinVogue Collective, a dynamic online fashion destination nestled in the heart of Berlin. " content="More to come" />
