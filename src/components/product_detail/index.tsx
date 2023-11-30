@@ -269,7 +269,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                         addToCart(productToAdd);
                         toggleState(); 
                       }}
-                      className="disabled:opacity-50 mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      className="disabled:opacity-50 mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-emerald-500 dark:bg-emerald-950 px-8 py-3 text-base font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       disabled={!selectedSize || !selectedColor}
                     >
                       Add to bag

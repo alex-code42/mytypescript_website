@@ -104,7 +104,7 @@ export default function ShoppingCart() {
                                         type="button"
                                         onClick={() => {removeFromCart(product.id)}}
 
-                                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                                        className="font-medium text-emerald-700 hover:text-emerald-800"
                                       >
                                         Remove
                                       </button>
@@ -127,7 +127,7 @@ export default function ShoppingCart() {
                       <div className="mt-6">
                         <a
                           href="/shop/checkout"
-                          className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                          className="flex items-center justify-center rounded-md border border-transparent bg-emerald-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-emerald-700"
                         >
                           Checkout
                         </a>
@@ -137,7 +137,7 @@ export default function ShoppingCart() {
                           or 
                           <button
                             type="button"
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
+                            className="font-medium text-emerald-600 hover:text-emerald-500"
                             onClick={toggleState}
                           >
                             Continue Shopping
