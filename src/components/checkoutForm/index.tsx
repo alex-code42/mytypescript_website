@@ -14,7 +14,7 @@ export default function CheckoutForm() {
 
   return (
     <form>
-    <div suppressHydrationWarning className="px-36 bg-white">
+    <div suppressHydrationWarning className=" p-8">
       <div className="space-y-12">
         
         <div className="border-b py-8 bg-white pb-12">
@@ -151,7 +151,7 @@ export function ProductsInCheckout(){
 
     return(
         <div>
-            <div className="mt-8 bg-white px-36">
+            <div className="mt-8 p-8">
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
                             {isClient && cartItems?.map((product:Item) => (
@@ -182,7 +182,7 @@ export function ProductsInCheckout(){
                                         type="button"
                                         onClick={() => {removeFromCart(product.id); console.log("removing")}}
                                         suppressHydrationWarning
-                                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                                        className="font-medium text-emerald-600 hover:text-emerald-900"
                                       >
                                         Remove
                                       </button>
