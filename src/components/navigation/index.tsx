@@ -98,7 +98,7 @@ const navigation = {
 
   
 return(<>
-      <div className="bg-white z-50">
+      <div className="bg-white z-50 ">
         {/* Mobile menu */}
         <Transition.Root show={open} as={Fragment}>
           <Dialog as="div" className="relative z-50 lg:hidden" onClose={setOpen}>
@@ -240,7 +240,7 @@ return(<>
           </Dialog>
         </Transition.Root>
   
-        <header className="relative bg-white">
+        <header className="relative bg-white ">
           <p className="flex h-10 items-center justify-center bg-emerald-500 dark:bg-emerald-950 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
           Typescript, Zustand, Contentful & React.js
 
@@ -417,7 +417,7 @@ return(<>
  
   
     return(
-      <div className='z-10 relative'>
+      <div className='z-10 relative '>
       <Navbar />
       <ShoppingCart />
         </div>
