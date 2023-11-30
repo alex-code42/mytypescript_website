@@ -10,9 +10,9 @@ const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
 
   return (
     <div>
-      <div className="h-[50vh] bg-gray-900 flex items-center mb-2 mt-8">
+      <div className="h-[50vh] bg-gray-900 flex items-center  ">
         <section
-          className="w-full bg-cover bg-center py-32 mb-3"
+          className="w-full bg-cover bg-center py-32"
           style={{ backgroundImage: `url(${blog.fields.titleImage.fields.file.url})` }}
         >
           <div className="container mx-auto text-center text-white">

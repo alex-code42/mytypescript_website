@@ -21,7 +21,7 @@ function Search({ productss }: { productss: ProductDetails[] }) {
 
   return (
     <div>
-    <div className="mx-auto lg:max-w-2xl lg:px-8 mt-8">
+    <div className="mx-auto lg:max-w-2xl lg:px-8 pt-6">
   <div className="relative mt-2 rounded-md shadow-sm px-4">
     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
       <span className="text-gray-500 sm:text-sm"></span>
