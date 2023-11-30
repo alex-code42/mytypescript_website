@@ -52,7 +52,7 @@ export interface BlogPost extends EntrySkeletonType {
     comments: string;
     moreImages: Asset[];
     specialStory: string
-    secondStory: string
+    longStory: string
   };
 }
 export interface SmallBlogPost{
