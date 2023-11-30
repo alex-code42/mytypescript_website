@@ -4,7 +4,7 @@ import { BlogPost } from '../../../../types';
 import { ContentfulText } from '../../../../types';
 
 const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
-  // console.log("this is the blog-yyz",blog.fields.titleImage.fields.file.url);
+  console.log("this is the blog-yyz",blog);
   
 
 
@@ -29,11 +29,11 @@ const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
             </h2>
             <p className="mb-4">
             
-            {blog?.fields.description.content.map((text: ContentfulText) => (
-                <div key={text?.sys?.id} className="group relative">
+            {/* {blog?.fields.description.content.map((text: ContentfulText) => (
+                <div key={text.content[0].value} className="group relative">
                  <p className="text-base text-black dark:text-white mb-8">{text.content[0].value}</p>
                 </div>
-              ))}
+              ))} */}
 
 
             </p>
@@ -47,15 +47,15 @@ const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
       <section className="bg-white dark:bg-emerald-950">
         <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl">
           <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-            <h2 className="mb-4 text-l tracking-tight font-extrabold text-gray-900 dark:text-white">
+            {/* <h2 className="mb-4 text-l tracking-tight font-extrabold text-gray-900 dark:text-white">
               Conclusion
-            </h2>
+            </h2> */}
             <p className="mb-4">
-            {blog?.fields?.conclusion?.content.map((text: ContentfulText) => (
-                <div key={text?.sys?.id} className="group relative">
+            {/* {blog?.fields?.conclusion?.content.map((text: ContentfulText) => (
+                <div key={text.content[0].value} className="group relative">
                  <p className="text-base text-black dark:text-white mb-8">{text.content[0].value}</p>
                 </div>
-              ))}
+              ))} */}
             </p>
             <img src={blog.fields.moreImages[0].fields.file.url} alt="Image Alt Text" className="w-full h-auto rounded-t-lg mt-6"/>
           </div>

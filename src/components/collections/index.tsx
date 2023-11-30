@@ -28,7 +28,7 @@ const callouts = [
   ]
 
   export default function Collections({blog } : {blog: BlogPost[]}) {
-    // console.log("this is the blog-yyz",blog[0].fields.titleImage.fields.file.url);
+    console.log("this is the blog-yyz",blog);
     return (
       <div className="bg-gray-100 -z-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
@@ -37,7 +37,7 @@ const callouts = [
   
             <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0 -z-50">
               {blog?.map((callout: BlogPost) => (
-                <div key={callout.sys.id} className="group relative">
+                <div key={callout?.sys?.id} className="group relative">
                   <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64 z-0">
                     <img
                       src={callout.fields.titleImage.fields.file.url}

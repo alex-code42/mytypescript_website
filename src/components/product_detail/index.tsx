@@ -1,6 +1,6 @@
 import { useState, useEffect  } from 'react'
 import { RadioGroup } from '@headlessui/react'
-import { products } from '../productlist/productlist'
+// import { products } from '../productlist/productlist'
 import { useRouter } from 'next/router'
 import useOpenShoppingCard from '../zustand'
 import useCartStore from '../zustand/cartStore'
@@ -26,24 +26,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
 
     const [selectedColor, setSelectedColor] = useState("")
     const [selectedSize, setSelectedSize] = useState("")
-    // console.log("this is the selected color",selectedColor);
-    // console.log("this is the selected size",selectedSize);
 
-// console.log("this is the productssssss",productss);
-
-  const router = useRouter();
-  const { isReady, query } = router;
-
-        if (!isReady) {
-          return <div>Loading...</div>;
-        }
-    const { id } = query;
-    const filteredProduct = products.filter(product => product.id === id)
-    // console.log("This is the filtered product",filteredProduct[0]);
-    
-    
-    const product = filteredProduct[0]
-    // console.log("this is the product",product);
 
 
   
@@ -52,25 +35,6 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
         <div className="pt-6">
           <nav aria-label="Breadcrumb">
             <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-              {product?.breadcrumbs.map((breadcrumb) => (
-                <li key={breadcrumb.id}>
-                  <div className="flex items-center">
-                    <a href={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
-                      {breadcrumb.name}
-                    </a>
-                    <svg
-                      width={16}
-                      height={20}
-                      viewBox="0 0 16 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      className="h-5 w-4 text-gray-300"
-                    >
-                      <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                    </svg>
-                  </div>
-                </li>
-              ))}
               <li className="text-gray-400">
             <span className="text-gray-600">{productss.fields.productName}</span>
           </li>
@@ -82,7 +46,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
             <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
               <img
                 src={productss.fields.images[0].fields.file.url}
-                alt={product?.images[0].alt}
+                alt="e"
                 className="h-full w-full object-cover object-center"
               />
             </div>
@@ -90,14 +54,14 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
               <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
                 <img
                   src={productss.fields.images[1].fields.file.url}
-                  alt={product?.images[1].alt}
+                  alt="d"
                   className="h-full w-full object-cover object-center"
                 />
               </div>
               <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
                 <img
                   src={productss.fields.images[2].fields.file.url}
-                  alt={product?.images[2].alt}
+                  alt="d"
                   className="h-full w-full object-cover object-center"
                 />
               </div>
@@ -105,7 +69,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
             <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
               <img
                 src={productss.fields.images[3].fields.file.url}
-                alt={product?.images[3].alt}
+                alt="s"
                 className="h-full w-full object-cover object-center"
               />
             </div>
@@ -121,29 +85,6 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="sr-only">Product information</h2>
               <p className="text-3xl tracking-tight text-gray-900">€ {productss.fields.price}</p>
-  
-              {/* Reviews */}
-              {/* <div className="mt-6">
-                <h3 className="sr-only">Reviews</h3>
-                <div className="flex items-center">
-                  <div className="flex items-center">
-                    {[0, 1, 2, 3, 4].map((rating) => (
-                      <StarIcon
-                        key={rating}
-                        className={classNames(
-                          reviews.average > rating ? 'text-gray-900' : 'text-gray-200',
-                          'h-5 w-5 flex-shrink-0'
-                        )}
-                        aria-hidden="true"
-                      />
-                    ))}
-                  </div>
-                  <p className="sr-only">{reviews.average} out of 5 stars</p>
-                  <a href={reviews.href} className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                    {reviews.totalCount} reviews
-                  </a>
-                </div>
-              </div> */}
   
               <form className="mt-10">
                 {/* Colors */}
@@ -194,7 +135,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                     <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
                       {productss?.fields?.sizes.map((size: string ) => (
                         <RadioGroup.Option
-                          key={size}
+                          key={size.name}
                           value={size}
                           disabled={!size}
                           className={({ active }) =>
@@ -210,30 +151,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                           {({ active, checked }) => (
                             <>
                               <RadioGroup.Label as="span">"{size}"</RadioGroup.Label>
-                              {/* {size.inStock ? (
-                                <span
-                                  className={classNames(
-                                    active ? 'border' : 'border-2',
-                                    checked ? 'border-indigo-500' : 'border-transparent',
-                                    'pointer-events-none absolute -inset-px rounded-md'
-                                  )}
-                                  aria-hidden="true"
-                                />
-                              ) : (
-                                <span
-                                  aria-hidden="true"
-                                  className="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200"
-                                >
-                                  <svg
-                                    className="absolute inset-0 h-full w-full stroke-2 text-gray-200"
-                                    viewBox="0 0 100 100"
-                                    preserveAspectRatio="none"
-                                    stroke="currentColor"
-                                  >
-                                    <line x1={0} y1={100} x2={100} y2={0} vectorEffect="non-scaling-stroke" />
-                                  </svg>
-                                </span>
-                              )} */}
+
                             </>
                           )}
                         </RadioGroup.Option>
