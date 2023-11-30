@@ -27,16 +27,13 @@ const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
             <h2 className="mb-4 text-xl tracking-tight font-extrabold text-black dark:text-white">
             {blog.fields.subtitle}
             </h2>
-            <p className="mb-4">
+            <div className="mb-4 mt-8">
+            <p>{blog.fields.specialStory}</p>
             
-            {/* {blog?.fields.description.content.map((text: ContentfulText) => (
-                <div key={text.content[0].value} className="group relative">
-                 <p className="text-base text-black dark:text-white mb-8">{text.content[0].value}</p>
-                </div>
-              ))} */}
+        
 
 
-            </p>
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-4 mt-8 ">
             <img className="w-full rounded-lg" src={blog.fields.moreImages[1].fields.file.url} alt="office content 1" />
@@ -50,13 +47,9 @@ const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
             {/* <h2 className="mb-4 text-l tracking-tight font-extrabold text-gray-900 dark:text-white">
               Conclusion
             </h2> */}
-            <p className="mb-4">
-            {/* {blog?.fields?.conclusion?.content.map((text: ContentfulText) => (
-                <div key={text.content[0].value} className="group relative">
-                 <p className="text-base text-black dark:text-white mb-8">{text.content[0].value}</p>
-                </div>
-              ))} */}
-            </p>
+            <div className="mb-4">
+            <p>{blog.fields.specialStory}</p>
+            </div>
             <img src={blog.fields.moreImages[0].fields.file.url} alt="Image Alt Text" className="w-full h-auto rounded-t-lg mt-6"/>
           </div>
         </div>
