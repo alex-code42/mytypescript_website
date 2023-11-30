@@ -8,8 +8,8 @@ Welcome to the My TypeScript Website project! This is a website built using Type
 
 ## Features
 
-- [ ] You can add products and blog posts with the Headless CMS.
-- [ ] You can add products to the cart and proceed with checkout.
+- [ ] Admins can add products and blog posts with the Contentful Headless CMS.
+- [ ] Users can add products to the cart and proceed with checkout.
 - [ ] Users can read the blog posts.
 
 ## Technologies Used
