@@ -135,7 +135,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
                     <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
                       {productss?.fields?.sizes.map((size: string ) => (
                         <RadioGroup.Option
-                          key={size.name}
+                          key={size}
                           value={size}
                           disabled={!size}
                           className={({ active }) =>
