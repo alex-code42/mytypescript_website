@@ -2,7 +2,7 @@ export default function AboutUs() {
   return (
     <div>
          
-      <section className="bg-emerald-500 dark:bg-gray-900">
+      <section className="bg-emerald-500 dark:bg-emerald-950">
       
             <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
                     <img

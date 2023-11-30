@@ -21,30 +21,30 @@ const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
           </div>
         </section>
       </div>
-      <section className="bg-white dark:bg-gray-900 mt-8">
+      <section className="bg-white dark:bg-emerald-950 mt-8">
         <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
           <div className="font-light text-gray-500 sm:text-lg dark:text-gray-100">
-            <h2 className="mb-4 text-xl tracking-tight font-extrabold text-gray-100 dark:text-white">
+            <h2 className="mb-4 text-xl tracking-tight font-extrabold text-black dark:text-white">
             {blog.fields.subtitle}
             </h2>
             <p className="mb-4">
             
             {blog?.fields.description.content.map((text: ContentfulText) => (
                 <div key={text?.sys?.id} className="group relative">
-                 <p className="text-base text-gray-100 mb-8">{text.content[0].value}</p>
+                 <p className="text-base text-black dark:text-white mb-8">{text.content[0].value}</p>
                 </div>
               ))}
 
 
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 mt-8">
+          <div className="grid grid-cols-2 gap-4 mt-8 ">
             <img className="w-full rounded-lg" src={blog.fields.moreImages[1].fields.file.url} alt="office content 1" />
             <img className="mt-4 w-full lg:mt-10 rounded-lg" src={blog.fields.moreImages[2].fields.file.url} alt="office content 2" />
           </div>
         </div>
       </section>
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white dark:bg-emerald-950">
         <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl">
           <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 className="mb-4 text-l tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -53,7 +53,7 @@ const TravelBlogPost = ({blog } : {blog: BlogPost}) => {
             <p className="mb-4">
             {blog?.fields?.conclusion?.content.map((text: ContentfulText) => (
                 <div key={text?.sys?.id} className="group relative">
-                 <p className="text-base text-gray-100 mb-8">{text.content[0].value}</p>
+                 <p className="text-base text-black dark:text-white mb-8">{text.content[0].value}</p>
                 </div>
               ))}
             </p>

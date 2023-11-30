@@ -13,7 +13,7 @@ export default function Card({product} : {product: ProductDetails}) {
     </div>
     <div className="mt-4 flex justify-between">
       <div>
-        <h3 className="text-sm text-gray-100">
+        <h3 className="text-sm text-white dark:text-white">
           <a href={`/shop/${product.fields.slug}`}>
             <span aria-hidden="true" className="absolute inset-0" />
             {product.fields.productName}
@@ -21,7 +21,7 @@ export default function Card({product} : {product: ProductDetails}) {
         </h3>
         {/* <p className="mt-1 text-sm text-gray-500">{product.color}</p> */}
       </div>
-      <p className="text-sm font-medium text-gray-100">€ {product.fields.price}</p>
+      <p className="text-sm font-medium text-white dark:text-white">€ {product.fields.price}</p>
     </div>
     </div>
     )
