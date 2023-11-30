@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { products } from "./productlist"
+// import { products } from "./productlist"
 import Image from 'next/image'
 import { Console } from "console";
 import { ProductDetails } from "../../../types";
@@ -12,6 +12,7 @@ import Card from "../search/Card";
   
   export default function ProductList({productss} : {productss: ProductDetails[]}) {
 
+console.log("this is the productss--->>>",productss);
 
     return (
       <div>
@@ -20,7 +21,9 @@ import Card from "../search/Card";
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">Collection</h2>
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {productss?.map((product) => (
+              <div key={product.sys.id}>
              <Card product={product} />
+              </div>
             ))}
           </div>
         </div>
