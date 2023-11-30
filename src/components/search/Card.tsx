@@ -2,7 +2,7 @@ import React from 'react';
 import { ProductDetails } from '../../../types';
 
 export default function Card({ product }: { product: ProductDetails }) {
-  console.log("this is the product", product.sys.id);
+  // console.log("this is the product", product.sys.id);
   return (
     <div className="group relative">
       <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
