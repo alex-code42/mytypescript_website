@@ -5,7 +5,7 @@ import { ProductsInCheckout } from "@/components/checkoutForm";
 
 export default function CheckoutPage(){
     return(
-        <div>
+        <div className="bg-white">
             <ProductsInCheckout/>
             <CheckoutForm/>
             <Paypall/>

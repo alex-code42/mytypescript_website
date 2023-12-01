@@ -53,6 +53,7 @@ export interface BlogPost extends EntrySkeletonType {
     moreImages: Asset[];
     specialStory: string
     longStory: string
+    thirdshorttext: string
   };
 }
 export interface SmallBlogPost{

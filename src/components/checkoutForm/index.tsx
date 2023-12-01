@@ -151,7 +151,7 @@ export function ProductsInCheckout(){
 
     return(
         <div>
-            <div className="mt-8 p-8">
+            <div className=" p-8">
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
                             {isClient && cartItems?.map((product:Item) => (
